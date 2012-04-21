@@ -19,10 +19,9 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$compay = null;
-		$this->load->model('Company_model',$compay);
-		$compay->get(1);
 		$this->load->view('welcome_message');
+		;
+		print_r(__CLASS__);
 	}
 }
 

@@ -11,6 +11,10 @@
  */
 class CU_Model extends CI_Model{
 
+	/**
+	 * @var CI_DB_active_record
+	 */
+	protected $db;
 	
 	/**
 	 * 表名
@@ -35,6 +39,7 @@ class CU_Model extends CI_Model{
 	 * @param array $config 连接配置
 	 */
 	public function __construct($config = ''){
+		unset($this->db);//调试
 		parent::__construct();
 		$this->connect($config);
 	}
@@ -110,6 +115,8 @@ class CU_Model extends CI_Model{
 			'total'=>$total,
 			'totalpage'=>ceil($total/$limit),
 			'count'=> $result->num_rows(),
+			'page'=>round($offset / $limit) + 1,
+			'limit'=>$limit
 		);
 		$result->free_result();
 		return $pagn;
@@ -120,7 +127,7 @@ class CU_Model extends CI_Model{
 	 * @param array $set 数据集合(key/value)
 	 * @return int $insert_id 如果插入的表有自动增长主键，则返回增长后的值，否则返回影响记录条数
 	 */
-	protected function insert(array $set){
+	public function insert(array $set){
 		$this->db->insert($this->_name,$set);
 		$insert_id = $this->db->insert_id();
 		if($insert_id<=0){
@@ -136,7 +143,7 @@ class CU_Model extends CI_Model{
 	 * @param array|string $where 条件
 	 * @return int $effct_rows_count 修改到的记录条数
 	 */
-	protected function update(array $set,$where){
+	public function update(array $set,$where){
 		$this->where($where);
 		$this->db->update($this->_name,$set);
 		return $this->db->affected_rows();
@@ -148,7 +155,7 @@ class CU_Model extends CI_Model{
 	 * @param int $limit 删除数量限制，默认不限制
 	 * @return int $delete_count 删除的记录数
 	 */
-	protected function delete($where,$limit = NULL){
+	public function delete($where,$limit = NULL){
 		if(!is_null($limit)&&is_numeric($limit)){
 			$this->where($where);
 			if(is_numeric($limit)){

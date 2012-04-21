@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_cn">
 <head>
-<title>404 Page Not Found</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微泰移动视频会议系统-404错误</title>  
 <style type="text/css">
 
 ::selection{ background-color: #E13300; color: white; }
@@ -11,7 +12,7 @@
 body {
 	background-color: #fff;
 	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	font: 13px/20px normal Helvetica, Arial, sans-serif , 微软雅黑;
 	color: #4F5155;
 }
 
@@ -45,7 +46,8 @@ code {
 #container {
 	margin: 10px;
 	border: 1px solid #D0D0D0;
-	-webkit-box-shadow: 0 0 8px #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+	padding:10px;
 }
 
 p {
@@ -55,8 +57,13 @@ p {
 </head>
 <body>
 	<div id="container">
+	<!--
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+		
+		-->
+		<h1>发生404错误</h1>
+		您访问的页面不存在
 	</div>
 </body>
 </html>

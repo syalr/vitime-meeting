@@ -26,7 +26,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '473cf8095faad1d27f46a01047af94d0';
 
 /*
 |--------------------------------------------------------------------------
@@ -279,7 +279,7 @@ $config['cookie_secure']	= FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = FALSE;
+$config['global_xss_filtering'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -357,6 +357,29 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+
+$config['form_valid'] = array(
+               array(
+                     'field'   => 'username', 
+                     'label'   => '用户名', 
+                     'rules'   => 'required'
+                  ),
+               array(
+                     'field'   => 'password', 
+                     'label'   => '密码', 
+                     'rules'   => 'required'
+                  ),
+               array(
+                     'field'   => 'passconf', 
+                     'label'   => '确认密码', 
+                     'rules'   => 'required'
+                  ),   
+               array(
+                     'field'   => 'email', 
+                     'label'   => 'email地址', 
+                     'rules'   => 'required'
+                  )
+            );
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

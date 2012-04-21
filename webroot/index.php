@@ -1,4 +1,6 @@
 <?php
+session_start();
+date_default_timezone_set("Asia/Shanghai");
 /*
 * 环境设置，默认开发环境
 */
@@ -10,7 +12,7 @@ define ( 'ENVIRONMENT', 'development' );
 if (defined ( 'ENVIRONMENT' )) {
 	switch (ENVIRONMENT) {
 		case 'development' :
-			error_reporting ( E_ALL );
+			error_reporting ( E_ALL^E_NOTICE );
 			break;
 		
 		case 'testing' :

@@ -1,6 +1,6 @@
 <?php
 
-require_once (SERVICE_DIR.'IUser.php');
+require_once (SERVICE_DIR.'users/IUser.php');
 /**
  * 企业管理员用户
  *  
@@ -18,6 +18,10 @@ class CmpAdmin implements IUser {
 	
 	public function __get($key){
 		return $this->user_data[$key];
+	}
+	
+	public function __set($key,$value){
+		$this->user_data[$key] = $value;
 	}
 	
 	/* (non-PHPdoc)

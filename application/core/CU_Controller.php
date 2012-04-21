@@ -1,217 +1,168 @@
 <?php
+require_once SERVICE_DIR.'UserSession.php';
 /**
- * abstract CU_Controller
- * @package libraries 
- * @desc Controller类扩展
- * @version v1.0
- * @author Gray.Liu
- * @since 2010-9-3
- * @copyright gaoomei@foxmail.com 
- *
+ * 控制器
+ *  
+ * @author gray.liu
+ * @email gaoomei@gmail.com
+ * @date 2012-4-21
  */
-abstract class CU_Controller extends CI_Controller{
-	/**
-	 * @var CU_Loader
-	 */
-	public $load;
-
-	/**
-	 * @var CI_Calendar
-	 */
-	public $calendar;
+abstract class CU_Controller extends CI_Controller {
 	
 	/**
-	 * @var Email
-	 */
-	public $email;
-	
-	/**
-	 * @var CI_Encrypt
-	 */
-	public $encrypt;
-	
-	/**
-	 * @var CI_Ftp
-	 */
-	public $ftp;
-	
-	/**
-	 * @var CI_Hooks
-	 */
-	public $hooks;
-	
-	/**
-	 * @var CI_Image_lib
-	 */
-	public $image_lib;
-	
-	/**
-	 * @var CI_Language
-	 */
-	public $language;
-	
-	/**
-	 * @var CI_Log
-	 */
-	public $log;
-	
-	/**
-	 * @var CI_Output
-	 */
-	public $output;
-	
-	/**
-	 * @var CI_Pagination
-	 */
-	public $pagination;
-	
-	/**
-	 * @var CI_Parser
-	 */
-	public $parser;
-	
-	/**
-	 * @var CI_Session
-	 */
-	public $session;
-	
-	/**
-	 * @var CI_Sha1
-	 */
-	public $sha1;
-	
-	/**
-	 * @var CI_Table
-	 */
-	public $table;
-	
-	/**
-	 * @var CI_Trackback
-	 */
-	public $trackback;
-	
-	/**
-	 * @var CI_Unit_test
-	 */
-	public $unit;
-	
-	/**
-	 * @var CI_Upload
-	 */
-	public $upload;
-	
-	/**
-	 * @var CI_URI
-	 */
-	public $uri;
-	
-	/**
-	 * @var CI_User_agent
-	 */
-	public $agent;
-	
-	/**
-	 * @var CI_Validation
-	 */
-	public $validation;
-	
-	/**
-	 * @var CI_Xmlrpc
-	 */
-	public $xmlrpc;
-	
-	/**
-	 * @var CI_Zip
-	 */
-	public $zip;
-	
-	/**
-	 * @var CI_Benchmark
-	 */
-	public $benchmark;
-	
-	/**
-	 * @var CI_Cart
-	 */
-	public $cart;
-	
-	/**
-	 * @var CI_Config
-	 */
-	public $config;
-	
-	/**
-	 * @var CU_Input
-	 */
-	public $input;
-	
-	/**
-	 * @var CI_Router
-	 */
-	public $router;
-	
-	/**
-	 * 控制器名称
-	 * @var string
-	 */
-	public $_controller;
-	
-	/**
-	 * 方法名
-	 * @var string
-	 */
-	public $_action;
-	
-	/**
-	 * 是否自动加载视图
+	 * 是否需要验证登录状态
 	 * @var boolean
 	 */
-	private $_autoLoadView = true;
+	protected $_valid_login_status = false;
 	
 	/**
-	 * 构造函数，不可覆盖
+	 * 与相反的方法名称集合
+	 * @var array
 	 */
-	final function __construct(){
-		parent::Controller();
-		$this->_controller = $this->router->fetch_class();
-		$this->_action = $this->router->fetch_method();
+	protected $_valid_login_exclude = array();
+	
+	protected $_action;
+	protected $_controller;
+	/**
+	 * @var IUser
+	 */
+	protected $_user;
+	protected $_is_login = false;
+	
+	public function __construct(){
+		parent::__construct();
+		$this->_user = UserSession::getUser();
+		$this->load->vars('login_user',$this->_user);
+		$this->_is_login = UserSession::isLogin();
+		$this->load->vars('is_login',$this->_is_login);
+		$this->_controller = get_class($this);
 	}
 	
 	/**
-	 * 初始化方法，全局调用，在子类中代替构造函数用
+	 * 设置是否需要验证登录
+	 * @param boolean $need
 	 */
-	protected abstract  function init();
-	
-	/**
-	 * 取消自动加载视图
-	 * @param boolean $boolean
-	 * @return void
-	 */
-	protected function setNoRender($boolean = TRUE){
-		$this->_autoLoadView = !$boolean;
+	public function _needValidLogin($need){
+		$this->_valid_login_status = $need;
 	}
 	
 	/**
-	 * 重写方法，将方法名重写为Action模式，不可覆盖
-	 * @param string $method 方法名
+	 * 添加排除对象
+	 * @param unknown_type $action
 	 */
-	final function _remap($method){
-		$this->init();
-		if(in_array('_remap_action',get_class_methods($this))){
-			call_user_func_array(array($this,'_remap_action'),NULL);
-			return;
+	public function _addNotValidAction($action){
+		$this->_valid_login_exclude[] = $action;
+	}
+	
+	/**
+	 * 调用方法前检查权限
+	 * @param string $method
+	 * @param array $params
+	 */
+	public function _remap($method,$params = array()){
+		$this->_action = $method;
+		$self = $this;
+		
+		if(!method_exists($self, $method)){
+			show_404();
+		}
+		$this->load->vars('_action',$this->_action);
+		$this->load->vars('_controller',$this->_controller);
+		
+		if(!$this->_validLogin($method)){
+			show_error('请先登录',200,'操作错误');
 		}
 		
-		$method = strtolower($method).'Action'; 
-		if ( ! in_array($method, get_class_methods($this)))
-		{
-			show_404("{$this->router->fetch_class()}/{$method}");
+		if(!$this->_has_permissions_do()){
+			return $this->_displayNoAuth();
 		}
-		call_user_func_array(array($this,$method),NULL);
-		if($this->_autoLoadView === TRUE){
-			$this->load->view();
+		
+		call_user_func_array(array($self, $method), $params);
+//		$this->$mmethod($params);
+	}
+	
+	/**
+	 * 验证登录
+	 * @param unknown_type $method
+	 */
+	protected function _validLogin($method){
+		/**
+		 * 如果需要验证登录，并且不在排除范围，并且未登录，则判断为无权限
+		 */
+		if($this->_valid_login_status === TRUE && !in_array(strtolower($method), array_map('strtolower', $this->_valid_login_exclude))){
+			if($this->_is_login !== TRUE){
+				return false;
+			}
+		}
+		
+		/**
+		 * 如果不需要验证登录，但是在排除范围，并且未登录，则判断为无权限
+		 */
+		if($this->_valid_login_status === FALSE && in_array(strtolower($method), array_map('strtolower', $this->_valid_login_exclude))){
+			if($this->_is_login !== TRUE){
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 * 是否有权限做这件事情
+	 */
+	protected abstract function _has_permissions_do();
+	
+	/**
+	 * 显示页面
+	 * @param array $data 显示的数据
+	 * @param string $template_dir 模版目录 默认当前控制器名称
+	 * @param string $script 需要渲染的脚本
+	 * @param boolean $renderHF 是否显示公共头部
+	 * 
+	 */
+	public function displayHtml($data = array(),$script='',$template_dir = '',$renderHF = true){
+		if(!is_array($data)){
+			$data =  array($data);
+		}
+		$this->load->vars($data);
+		if(empty($template_dir)){
+			$template_dir = strtolower($this->_controller);
+		}
+		
+		if(empty($script)){
+			$script = strtolower($this->_action);
+			if(empty($script)){
+				$script = 'index';
+			}
+		}
+		
+		$template_dir = $template_dir.'/'.$script.'.php';
+		if($renderHF){
+			$this->load->view('/header.php');
+			$this->load->view($template_dir);
+			$this->load->view('/footer.php');
 		}
 	}
 	
+	/**
+	 * 无权限操作
+	 */
+	protected function _displayNoAuth(){
+		show_error('您没有权限执行该操作',403,'发生了权限错误');
+	}
+	
+	protected function _redirect($action,$controller='',$params = array()){
+		if(empty($controller)){
+			$controller = strtolower($this->_controller);
+		}
+		if(is_array($params)){
+			$params = implode('/', $params);
+		}else{
+			$params = trim($params,'/');
+		}
+	
+		$uri = '/'.$controller.'/'.$action.'/'.$params;
+		redirect($uri);
+	}
 }
+
 ?>

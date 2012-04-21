@@ -20,6 +20,19 @@ class Company_model extends CU_Model{
 		return $this->find($id);
 		
 	}
+	
+	/**
+	 * 根据mark标识读取企业信息
+	 * @param string $mark
+	 */
+	public function getCompanyByMark($mark){
+		if(empty($mark)){
+			return array();
+		}
+		
+		return $this->fetchRow(array('company_mark'=>$mark));
+	}
+	
 	/**
 	 * 新增公司
 	 * @param unknown_type $companyName
@@ -31,7 +44,5 @@ class Company_model extends CU_Model{
 		}
 		$data = array('company_name'=>$companyName,'company_mark'=>$companyMark);
 		return $this->insert($data);
-	}
-	
-	
+	}	
 }

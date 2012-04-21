@@ -1,6 +1,6 @@
 <?php
 
-require_once (SERVICE_DIR.'IUser.php');
+require_once (SERVICE_DIR.'users/IUser.php');
 /**
  * 系统管理员用户
  *  
