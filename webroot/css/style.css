@@ -53,6 +53,7 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .icon-rf{ background:url(../images/icon_rf.png) no-repeat; height:16px; width:16px;}
 .icon-ok{ background:url(../images/icon_ok.png) no-repeat; height:21px; width:23px;}
 .icon-att{ background:url(../images/info_48.png) no-repeat; height:48px; width:48px;}
+.icon-att-error{ background:url(../images/Block 48x48.png) no-repeat; height:48px; width:48px;}
 .inputStyle{ background:url(../images/input_bg.png) no-repeat; height:37px; border:0px solid #f5f5f5; width:367px; padding-left:10px; line-height:37px; font-size:16px;}
 .btnBlue{ background:url(../images/button_blue.png) no-repeat; width:153px; height:43px; _height:44px; color:#fff; font-weight:bold; font-size:18px;}
 .btnRed{ background:url(../images/button_red.png) no-repeat; width:153px; height:43px; _height:44px; color:#fff; font-weight:bold; font-size:18px;}
@@ -144,9 +145,9 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .reserBox div{ display:block; padding-bottom:5px; font-size:16px; color:#333;}
 .reserBox span.stip{ font-size:12px;  color:#666;}
 .reserBox .year{ width:100px; margin-right:10px;}
-.reserBox .month{ width:100px; margin-right:10px;}
-.reserBox .day{ width:100px;}
-.reserBox .time{ width:120px;}
+.reserBox .month{ width:50px; margin-right:10px;}
+.reserBox .day{ width:50px;}
+.reserBox .time{ width:60px;}
 .reserBtn{ text-align:center; padding-top:50px; padding-bottom:20px;}
 .reserBtn .btnBlue{ margin-right:70px;}
 .reserBox .left{ float:left; width:470px;}

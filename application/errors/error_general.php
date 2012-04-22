@@ -61,8 +61,10 @@ p {
 
 	</div>
 	<div id="container">
-		<a href='javascript:void()' onclick='window.history.back()'>返回上一页</a>
-		<a href='javascript:void()' onclick='window.location.href="/"' style='margin-left:20px;'>返回首页</a>
+	<?php if(!empty($to_url)):?>
+		<a href='<?php echo $to_url['url']?>'><?php echo $to_url['label']?></a>
+	<?php endif;?>
+		<a href='/' style='margin-left:20px;'>返回首页</a>
 	</div>
 			
 </body>

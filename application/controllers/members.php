@@ -40,6 +40,10 @@ class Members extends CI_Controller{
 	 * 普通用户登录界面
 	 */	
 	public function index(){
+		$this->login();
+	}
+	
+	public function login(){
 		//读取cookie中的用户名
 		$cookie_username = $_COOKIE[self::COOKIE_USER_NAME_TAG];
 		$cookie_username = $this->encrypt->decode($cookie_username);
@@ -95,7 +99,7 @@ class Members extends CI_Controller{
 		
 		$company_mark = $_COOKIE[self::COOKIE_COMPANY_TAG];
 		$company_mark = $this->encrypt->decode($company_mark);
-		$this->displayLoginHtml(array('username'=>$cookie_username,'company_mark'=>$company_mark),self::USER_LOGIN_TEMPLATE);
+		$this->displayLoginHtml(array('username'=>$cookie_username,'company_mark'=>$company_mark),self::ADMIN_LOGIN_TEMPLATE);
 	}
 	
 	/**
@@ -199,7 +203,7 @@ class Members extends CI_Controller{
 	public function register_success(){
 		$register_id = $_SESSION['register_success_id'];
 		if(empty($register_id)){
-			redirect('/','location');
+			redirect('/members','location');
 		}
 		unset($_SESSION['register_success_id']);
 		$this->load->view('/header.php');

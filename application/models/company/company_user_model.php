@@ -81,6 +81,24 @@ class Company_user_model extends CU_Model {
 	}
 	
 	/**
+	 * 读取用户列表，排除管理员
+	 * @param int $cmpId
+	 * @param int $page
+	 * @param int $limit
+	 */
+	public function getCompanyUserListNotAdmin($cmpId,$page = 1, $limit = 10){
+		if(empty($cmpId)){
+			return array();
+		}
+		$page = max(intval($page),1);
+		$offset = ($page - 1)*$limit;
+		
+		$where = array('status'=>'1','priority'=>2);
+		return $this->selectByPage('*', $where,'id desc',$limit,$offset);
+	}
+	
+	
+	/**
 	 * 列出所有企业管理员
 	 * @param int $page
 	 * @param int $limit
@@ -115,6 +133,38 @@ class Company_user_model extends CU_Model {
 		);
 		$result->free_result();
 		return $pagn;
+	}
+	
+	/**
+	 * 读取企业所有用户
+	 * @param string $cols
+	 * @param int $company_id
+	 * @param int $limit
+	 */
+	public function getAllUser($cols='*',$company_id,$limit = 0){
+		if(empty($company_id)){
+			return array();
+		}
+		$where = array('company_id'=>$company_id,'status'=>1);
+		if(!is_numeric($limit) || $limit == 0){
+			$limit = null;
+		}
+		return $this->fetchAll($cols, $where,'id desc',$limit);
+	}
+	
+	/**
+	 * 删除用户
+	 * @param int $user_id
+	 * @param int $cmpId
+	 */
+	public function deleteUser($user_id,$cmpId){
+		if(empty($user_id) || empty($cmpId)){
+			return 0;
+		}
+		
+		$data = array('status'=>0);
+		$where = array('id'=>$user_id,'company_id'=>$cmpId);
+		return $this->update($data, $where);
 	}
 }
 

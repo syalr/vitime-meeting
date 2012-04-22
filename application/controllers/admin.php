@@ -59,10 +59,6 @@ class Admin extends CU_Controller{
 			$errMsg .= $this->wrapErrorMsg("用户名必须填写");
 		}
 		
-		if(empty($postData['password'])){
-			$errMsg .= $this->wrapErrorMsg("密码必须填写");
-		}
-		
 		if(empty($postData['mobile'])){
 			$errMsg .= $this->wrapErrorMsg("手机号码必须填写");
 		}
@@ -88,11 +84,68 @@ class Admin extends CU_Controller{
 		if($loginMsg === TRUE){
 			redirect("/{$this->_controller}/update_company_success/", 'location');
 		}else{
-			return $this->displayHtml(array('errMsg'=>"修改失败，$loginMsg"));
+			$company_admin = AdminManage::getInstance()->getCompany($postData['user_id'],$postData['company_id']);
+			return $this->displayHtml(array_merge($company_admin,array('errMsg'=>"修改失败，$loginMsg")));
 		}
 		
 	}
 	
+	/**
+	 * 修改成功
+	 */
+	public function update_company_success(){
+		$this->displayHtml();
+	}
+	
+	/**
+	 * 删除企业
+	 */
+	public function delete_company(){
+		if(!$this->input->is_post()){
+			$this->_redirect('listcompany');
+		}
+		$user_id = $this->input->post('user_id',true);
+		$cmp_id = $this->input->post('cmp_id',true);
+		if(empty($user_id) || empty($cmp_id)){
+			$this->_redirect('listcompany');
+		}
+		
+		if(empty($user_id) || empty($cmp_id)){
+			$this->_redirect('listcompany');
+		}
+		
+		$delRs = AdminManage::getInstance()->deleteCmpAdmin($user_id,$cmp_id);
+		if($delRs === TRUE){
+			$_SESSION['delete_company_success'] = $user_id.'-'.$cmp_id;
+			$this->_redirect('delete_company_result');
+		}else{
+			$_SESSION['delete_company_failure'] = '删除失败，'.$delRs;
+			$this->_redirect('delete_company_result');
+		}
+	}
+	
+	/**
+	 * 显示删除结果
+	 */
+	public function delete_company_result(){
+		//删除成功
+		if(!empty($_SESSION['delete_company_success'])){
+			$id = $_SESSION['delete_company_success'];
+			$ids = explode('-', $id);
+			unset($_SESSION['delete_company_success']);
+			$company = AdminManage::getInstance()->getCompany($ids[0], $ids[1]);
+			$this->displayHtml($company,'delete_company_success');
+		}else {
+			//删除失败
+			if(empty($_SESSION['delete_company_failure'])){
+				$this->_redirect('listcompany');
+			}else{
+				$failureMsg = $_SESSION['delete_company_failure'];
+				unset($_SESSION['delete_company_failure']);
+				$this->displayHtml(array('errMsg'=>$failureMsg),'delete_company_failure');
+			}
+		}
+	}
 	
 	/** 
 	 * 是否有权限

@@ -7,7 +7,7 @@
     	<div class="regSuccessTip">
         	<span class="icon icon-att"></span>
             <div class="regTxt">
-            	企业帐号注册成功！您的用户名为：<?php echo register_id?>
+            	企业帐号注册成功！您的用户名为：<?php echo $register_id?>
             </div>
         </div>
         <div class="regBtn">

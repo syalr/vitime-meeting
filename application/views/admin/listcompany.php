@@ -31,7 +31,7 @@
 	                    <td class="td5"><?php echo $user['email']?></td>
 	                    <td class="td5">
 						<button type="submit" class="btn btnBlueSm mg-r10" onclick='toUpdateCmp(<?php echo $user['id'],',',$user['company_id'];?>)'>修改</button>
-						<button type="submit" class="btn btnBlueSm" onclick='delete_company(<?php echo $user['id']?>)'>删除</button>
+						<button type="submit" class="btn btnBlueSm" onclick='delete_company(<?php echo $user['id'],',',$user['company_id'];?>)'>删除</button>
 						</td>
 	                  </tr>
 	                  <?php endforeach;?>
@@ -46,3 +46,7 @@
     	<?php echo makepage($page,$total,'',10);?>
     </div>
     <script src='/js/admin.js'></script>
+    <form name='deletecompanyForm' action='/admin/delete_company' method='post'>
+    <input type='hidden' name='cmp_id' />
+    <input type='hidden' name='user_id' />
+    </form>

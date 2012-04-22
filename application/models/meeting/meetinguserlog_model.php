@@ -38,5 +38,18 @@ class Meetinguserlog_model extends CU_Model{
 		return $this->insert($data);
 	}
 	
+	/**
+	 * 读取会议用户
+	 * @param int $meeting_id
+	 */
+	public function getMeetingUserList($meeting_id){
+		if(empty($meeting_id)){
+			return array();
+		}
+		$where = "meet_id = '".$this->db->escape($meeting_id)."'";
+		$sql = "select L.meet_id,M.* from {$this->_name} as L left join vitime_member as M on L.user_id=M.id where  {$where} order by L.id desc ";
+		$query = $this->db->query($sql);
+		return $query->result_array();	
+	}
 	
 }

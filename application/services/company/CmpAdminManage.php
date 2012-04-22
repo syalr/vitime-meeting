@@ -1,10 +1,10 @@
 <?php
 
-require_once (SERVICE_DIR.'company/ICompanyManage.php');
 require_once SERVICE_DIR.'users/CmpAdmin.php';
 require_once SERVICE_DIR.'users/CmpUser.php';
+require_once SERVICE_DIR.'meeting/Meeting.php';
 
-class CmpAdminManage implements ICompanyManage {
+class CmpAdminManage{
 	
 	/**
 	 * @var CI_Controller
@@ -182,70 +182,128 @@ class CmpAdminManage implements ICompanyManage {
 	
 	/**
 	 * 更新企业管理员
-	 * @param CmpUser $user
+	 * @param array $postData
 	 */
-	public function updateCmpUser(CmpUser $user){}
+	public function updateCmpUser($postData){
+		$user_id = $postData['user_id'];
+		$name = $postData['name'];
+		$company_id = $this->getUser()->company_id;
+		$username = $postData['username'];
+		$password = $postData['password'];
+		$mobile = $postData['mobile'];
+		$email = $postData['email'];
+		$status = $postData['status'];
+		
+		//加载数据库访问模型
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		
+		//判断是否存在该用户
+		$cmpUser = $this->CI->CompanyUserModel->getUserById($user_id,$company_id);
+		if(empty($cmpUser)){
+			return "参数错误";
+		}
+		
+		//更改帐号时需要判断是否已经存在
+		if($username != $cmpUser['username']){
+			$user = $this->CI->CompanyUserModel->getUserByName($username);
+			if(!empty($user) && $user['id'] != $cmpUser['id']){
+				return "用户名：{$username} 已经被注册";
+			}
+		}
+		
+		//存储结果
+		$rs = 1;
+		
+		$user = new CmpUser();
+		$user->name = $name;
+		$user->username = $username;
+		if(!empty($password)){
+			$user->password = make_password($username, $password);
+		}
+		$user->mobile = $mobile;
+		$user->email = $email;
+		$user->status = intval($status);
+		
+		 //检查是否有更改
+		$userArr = $user->toArray();
+		$isModify = false;
+		foreach($userArr as $k=>$field){
+			if($cmpUser[$k] != $field){
+				$isModify = true;
+				break;
+			}
+		}
+		
+		if($isModify){
+			$where = array('id'=>$user_id,'company_id'=>$company_id);
+			$rs = $this->CI->CompanyUserModel->update($user->toArray(),$where);
+			if($rs == 1){
+				return true;
+			}else{
+				return "更新管理员资料失败";
+			}
+		}
+		return $rs === 1;
+	}
 	
 	/**
 	 * 删除企业管理员
 	 * @param CmpUser $user
 	 */
-	public function deleteCmpUser(CmpUser $user){}
+	public function deleteCmpUser($user_id){
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		$cmpId = $this->getUser()->company_id;
+		
+		$user = $this->CI->CompanyUserModel->getUserById($user_id,$cmpId);
+		if(empty($user) || $user['status'] == 0){
+			return '用户不存在';
+		}
+		$rs = $this->CI->CompanyUserModel->deleteUser($user_id,$cmpId);
+		if($rs == 1){
+			return true;
+		}else{
+			return "未知原因导致失败";
+		}
+	}
 	
 	/**
-	 * 企业管理员列表
+	 * 读取用户信息
+	 * @param int $user_id
+	 */
+	public function getUserInfo($user_id){
+		if(empty($user_id)){
+			return array();
+		}
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		$cmpId = $this->getUser()->company_id;
+		
+		return $this->CI->CompanyUserModel->getUserById($user_id,$cmpId);
+	}
+	
+	/**
+	 * 企业普通员工列表
 	 * @param int $page
 	 * @param int $limit
 	 */
 	public function listCmpUser($page = 1,$limit = 10){
 		$cmpId = $this->getUser()->company_id;
 		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
-		$userlist = $this->CI->CompanyUserModel->getUserListByCmpId($cmpId,$page,$limit);
+		$userlist = $this->CI->CompanyUserModel->getCompanyUserListNotAdmin($cmpId,$page,$limit);
 		return $userlist;
 	}
 	
-	
-	/* (non-PHPdoc)
-	 * @see ICompanyManage::listCmpMeeting()
+	/**
+	 * 读取企业所有用户
+	 * @param int $company_id
+	 * @param string $cols
+	 * @param int $limit
 	 */
-	public function listCmpMeeting() {
-		// TODO Auto-generated method stub
-		
+	public function listAllUser($cols='*',$limit = 50){
+		$cmpId = $this->getUser()->company_id;
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		return $this->CI->CompanyUserModel->getAllUser($cols,$cmpId,$limit);
 	}
 
-	/* (non-PHPdoc)
-	 * @see ICompanyManage::listPubMeeting()
-	 */
-	public function listPubMeeting() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/* (non-PHPdoc)
-	 * @see ICompanyManage::bookMeeting()
-	 */
-	public function bookMeeting() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/* (non-PHPdoc)
-	 * @see ICompanyManage::cancelMeeting()
-	 */
-	public function cancelMeeting() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/* (non-PHPdoc)
-	 * @see ICompanyManage::changeMeeting()
-	 */
-	public function changeMeeting() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	public function viewMeeting(){}
 }
 
 ?>

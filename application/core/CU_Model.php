@@ -192,11 +192,11 @@ class CU_Model extends CI_Model{
 	 */
 	public function fetchAll($cols = '*',$where,$order,$limit = NULL,$offset = NULL){
 		$this->db->select($cols);
-		$this->where($where)->limit($limit,$offset);
+		$this->where($where);
 		if(!empty($order)){
 			$this->db->order_by($order);
 		}
-		return $this->db->get($this->_name)->result_array();
+		return $this->db->get($this->_name,$limit,$offset)->result_array();
 	}
 	
 	/**

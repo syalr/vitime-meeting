@@ -22,33 +22,33 @@ class Meeting {
 	 * 是否公开会议
 	 */
 	public function isPublic(){
-		
+		return $this->meeting_info['type'] == 0;
 	} 
 	
 	/**
 	 * 是否正在会议中
 	 */
-	public function isMeeting(){}
+	public function isMeeting(){
+		return strtotime($this->meeting_info['start_time']) < time()
+				&& strtotime($this->meeting_info['end_time']) > time();
+	}
 	
 	/**
 	 * 是否结束 
 	 */
-	public function isOver(){}
+	public function isOver(){
+		return strtotime($this->meeting_info['end_time']) < time();
+	}
 	
 	/**
 	 * 是否已经取消
 	 */
-	public function isCancel(){}
+	public function isCancel(){
+		return $this->meeting_info['state'] == 0;
+	}
 	
-	/**
-	 * 读取参与会议人员列表
-	 */
-	public function getPartner(){
-		if(empty($this->meeting_info['partners'])){
-			//@todo 读取与会者
-		}
-		
-		return $this->meeting_info['partners'];
+	public function toArray(){
+		return $this->meeting_info;
 	}
 }
 

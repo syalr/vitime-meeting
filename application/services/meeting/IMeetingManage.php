@@ -6,19 +6,19 @@
  * @email gaoomei@gmail.com
  * @date 2012-4-20
  */
-interface ICompanyManage {
+interface IMeetingManage {
 	
 	public function listCmpMeeting();
 	
 	public function listPubMeeting();
 	
-	public function bookMeeting();
+	public function bookMeeting($data);
 	
-	public function cancelMeeting();
+	public function cancelMeeting($meeting_id);
 	
-	public function changeMeeting();
+	public function changeMeeting($meeting_id);
 	
-	public function viewMeeting();
+	public function viewMeeting($meeting_id);
 	
 	
 }

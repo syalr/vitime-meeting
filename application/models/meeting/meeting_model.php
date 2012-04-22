@@ -24,23 +24,37 @@ class Meeting_model extends CU_Model{
 	 * @param unknown_type $companyName
 	 * @param unknown_type $companyMark
 	 */
-	public function newMeeting($cmpId,$userId,$title,$startTime,$endTime,$type,$state,$password,$usercount){
-		if(empty($cmpId) || empty($userId) || empty($title)){
-			return 0;
-		}
-		$data = array(
-			'company_id'=>$cmpId,
-			'user_id'=>$userId,
-			'title'=>$title,
-			'start_time'=>$startTime,
-			'end_time'=>$endTime,
-			'type'=>$type,
-			'state'=>$state,
-			'password'=>$password,
-			'usercount'=>$usercount
-		);
+	public function newMeeting($data){
+		
 		return $this->insert($data);
 	}
 	
+	/**
+	 * 读取会议列表
+	 * @param int $company_id
+	 * @param int $page
+	 * @param int $limit
+	 */
+	public function getCompanyMeetingList($user_id,$company_id,$page = 1,$limit = 10){
+		if(empty($company_id)){
+			return array();
+		}
+		$page = max(intval($page),1);
+		$offset = ($page - 1)*$limit;
+		$where = array('company_id'=>$company_id,'type'=>1);
+		return $this->selectByPage('*',$where,"(user_id={$user_id}) desc,start_time desc",$limit,$offset);
+	}
+	
+	/**
+	 * 读取公共会议列表
+	 * @param int $page
+	 * @param int $limit
+	 */
+	public function getPublicMeetingList($user_id,$page = 1,$limit = 10){
+		$page = max(intval($page),1);
+		$offset = ($page - 1)*$limit;
+		$where = array('type'=>0);
+		return $this->selectByPage('*',$where,"(user_id={$user_id}) desc,start_time desc",$limit,$offset);
+	}
 	
 }

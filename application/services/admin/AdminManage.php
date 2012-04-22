@@ -133,24 +133,34 @@ class AdminManage {
 		//加载数据库访问模型
 		$this->CI->load->model('company/Company_model','CompanyModel');
 		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		
+		//判断是否存在该企业
 		$cmpAdmin = $this->CI->CompanyUserModel->getUserById($user_id,$company_id);
 		if(empty($cmpAdmin)){
 			return "参数错误";
 		}
 		
+		//检查企业标识是否修改
 		$company = $this->CI->CompanyModel->getCompanyByMark($companyMark);
 		if(!empty($company) && $company['id'] != $company_id){
 			return "{$companyMark} 企业标识已经存在，不能使用";
 		}
 		
-		$user = $this->CI->CompanyUserModel->getUserByName($username);
-		if(!empty($user) && $user['id'] != $cmpAdmin['id']){
-			return "该用户名已经被注册";
+		//更改帐号时需要判断是否已经存在
+		if($username != $cmpAdmin['username']){
+			$user = $this->CI->CompanyUserModel->getUserByName($username);
+			if(!empty($user) && $user['id'] != $cmpAdmin['id']){
+				return "用户名：{$username} 已经被注册";
+			}
 		}
 		
+		//存储结果
+		$rs = 1;
 		
 		//开启事务
 		$this->CI->db->trans_begin();
+		
+		//如果内容有修改，则更新
 		if($company['company_name'] != $companyName || $company['company_mark'] != $companyMark){
 			$company['company_name'] = $companyName;
 			$company['company_mark'] = $companyMark;
@@ -172,23 +182,57 @@ class AdminManage {
 		$admin->mobile = $mobile;
 		$admin->email = $email;
 		$admin->status = intval($status);
-
-		$where = array('id'=>$user_id,'company_id'=>$company_id);
-		$rs = $this->CI->CompanyUserModel->update($admin->toArray(),$where);
-		if($rs == 1){
-			$this->CI->db->trans_commit();
-			return true;
-		}else{
-			$this->CI->db->trans_rollback();
-			return "更新管理员资料失败";
+		
+		 //检查是否有更改
+		$adminArr = $admin->toArray();
+		$isModify = false;
+		foreach($adminArr as $k=>$field){
+			if($cmpAdmin[$k] != $field){
+				$isModify = true;
+				break;
+			}
 		}
+		
+		if($isModify){
+			$where = array('id'=>$user_id,'company_id'=>$company_id);
+			$rs = $this->CI->CompanyUserModel->update($admin->toArray(),$where);
+			if($rs == 1){
+				$this->CI->db->trans_commit();
+				return true;
+			}else{
+				$this->CI->db->trans_rollback();
+				return "更新管理员资料失败";
+			}
+		}
+		$this->CI->db->trans_commit();
+		return $rs === 1;
+		
 	}
 	
 	/**
 	 * 删除企业管理员
 	 * @param CmpAdmin $user
 	 */
-	public function deleteCmpAdmin(CmpAdmin $user){}
+	public function deleteCmpAdmin($user_id,$cmp_id){
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		
+		//判断是否存在该企业
+		$cmpAdmin = $this->CI->CompanyUserModel->getUserById($user_id,$cmp_id);
+		if(empty($cmpAdmin)){
+			return "参数错误，不存在的企业";
+		}
+		
+		if($cmpAdmin['status'] == 0){
+			return "该企业已经被删除";
+		}
+		
+		$rs = $this->CI->CompanyUserModel->update(array('status'=>0),array('id'=>$user_id,'company_id'=>$cmp_id));
+		if($rs == 1){
+			return true;
+		}else{
+			return "未知原因";
+		}
+	}
 	
 	/**
 	 * 企业管理员列表

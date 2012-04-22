@@ -70,7 +70,8 @@ abstract class CU_Controller extends CI_Controller {
 		$this->load->vars('_controller',$this->_controller);
 		
 		if(!$this->_validLogin($method)){
-			show_error('请先登录',200,'操作错误');
+//			show_error(array('请先登录','to_url'=>array('')),200,'操作错误');
+			$this->_showError('该操作需要登录，请前往登录',array('url'=>'/members/login','label'=>'前往登录'));
 		}
 		
 		if(!$this->_has_permissions_do()){
@@ -79,6 +80,10 @@ abstract class CU_Controller extends CI_Controller {
 		
 		call_user_func_array(array($self, $method), $params);
 //		$this->$mmethod($params);
+	}
+	
+	public function _showError($msg,$to_url = array()){
+		show_error(array($msg,'to_url'=>$to_url),200,'操作错误');
 	}
 	
 	/**
