@@ -1,4 +1,7 @@
 <?php $this->load->view('/mymeeting/cmp_user_nav.php')?>
+<div class='pageBox'>
+<?php echo makepage($page,$total,'',10);?>
+</div>
 <div class="reserBox">
     	<div class="col">
             <h3>会议室列表</h3>
@@ -41,6 +44,9 @@
             </div>
         </div>
     </div>
+    <div class='pageBox'>
+<?php echo makepage($page,$total,'',10);?>
+</div>
     <div class="reserBox userList2" style='display:none;'>
     	<div class="col">
             <h3>用户列表</h3>

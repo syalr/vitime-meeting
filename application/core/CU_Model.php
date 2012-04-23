@@ -113,9 +113,9 @@ class CU_Model extends CI_Model{
 		$pagn = array(
 			'data' => $result->result_array(),
 			'total'=>$total,
-			'totalpage'=>ceil($total/$limit),
+			'totalpage'=>empty($limit)?0:ceil($total/$limit),
 			'count'=> $result->num_rows(),
-			'page'=>round($offset / $limit) + 1,
+			'page'=>empty($limit)?1:round($offset / $limit) + 1,
 			'limit'=>$limit
 		);
 		$result->free_result();

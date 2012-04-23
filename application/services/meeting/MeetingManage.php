@@ -77,9 +77,8 @@ class MeetingManage implements IMeetingManage{
 	 * @see ICompanyManage::listCmpMeeting()
 	 */
 	public function listPubMeeting($page = 1,$limit = 10) {
-		$company_id = $this->getUser()->company_id;
 		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
-		return $this->CI->MeetingModel->getCompanyMeetingList($this->getUser()->id,$company_id,$page,$limit);
+		return $this->CI->MeetingModel->getPublicMeetingList($this->getUser()->id,$page,$limit);
 	}
 
 	/** 
@@ -89,16 +88,16 @@ class MeetingManage implements IMeetingManage{
 	 */
 	public function bookMeeting($postData) {
 		$user_list = explode(',', $postData['user_list']);
-		$start_time = strtotime($start_time);
-		
+		$user_list = array_unique($user_list);
+		$user_list = array_filter($user_list); 
 		$meeting = new Meeting();	
 		$meeting->title = $postData['title'];
 		$meeting->user_id = $this->getUser()->id;
 		$meeting->company_id = $this->getUser()->company_id;
-		$start_time = $postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'];
+		$start_time = strtotime($postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'].':00');
 		
 		$meeting->start_time = date('Y-m-d H:i:s',$start_time);
-		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval(minutes_length)*60 ));
+		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['minutes_length'])*60 ));
 		$meeting->type = 1;
 		$meeting->state = 1;
 		

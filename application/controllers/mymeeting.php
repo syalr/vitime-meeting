@@ -97,6 +97,10 @@ class Mymeeting extends CU_Controller {
 		$this->displayHtml($meeting);
 	}
 	
+	public function public_reservation(){
+		
+	}
+	
 	protected function _has_permissions_do() {
 		return $this->_user->isCmpUser();
 	}

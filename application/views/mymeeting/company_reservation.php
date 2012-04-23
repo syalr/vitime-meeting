@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <div>会议时长(分钟)</div>
-                             <input name='minutes_length' id='start_time' class='year' value='<?php echo $minutes_length?>' />
+                             <input name='minutes_length' class='year' value='<?php echo $minutes_length?>' />
                         </li>
                     </ul>
                 </form>
