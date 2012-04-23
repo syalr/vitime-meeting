@@ -5,6 +5,11 @@ require_once SERVICE_DIR.'meeting/MeetingManage.php';
 
 class Mymeeting extends CU_Controller {
 	
+	public function __construct(){
+		parent::__construct();
+		$this->_needValidLogin(true);
+	}
+	
 	public function index(){
 		$this->_redirect('company_meeting');
 	}
@@ -97,8 +102,50 @@ class Mymeeting extends CU_Controller {
 		$this->displayHtml($meeting);
 	}
 	
+	/**
+	 * 预约公共会议
+	 */
 	public function public_reservation(){
+		$this->displayHtml(array('_action'=>'public_meeting'));
+	}
+	
+	public function do_public_reservation(){
+		$postData = $this->input->post(NULL,TRUE);
+		if(empty($postData)){
+			$this->_redirect('public_reservation');
+		}
 		
+		$errMsg = '';
+		if(empty($postData['title'])){
+			$errMsg .='会议主题必须填写&nbsp;&nbsp;';
+		}
+		
+		if(empty($postData['start_time'])){
+			$errMsg .="会议开始时间必须填写";
+		}
+		
+		if(!empty($errMsg)){
+			$postData['errMsg'] = $errMsg;
+			$this->displayHtml($postData,'public_reservation');
+		}else{
+			$rs = MeetingManage::getInstance()->bookPublicMeeting($postData);
+			if(is_numeric($rs) || $rs > 0){
+				$_SESSION['public_meeting_success'] = $rs;
+				$this->_redirect('public_reservation_success');
+			}
+		}
+	}
+	/**
+	 * 预约会议成功
+	 */
+	public function public_reservation_success(){
+		$meet_id = $_SESSION['public_meeting_success'];
+		unset($_SESSION['public_meeting_success']);
+		if(empty($meet_id)){
+			$this->_redirect('public_meeting');
+		}
+		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		$this->displayHtml($meeting);
 	}
 	
 	protected function _has_permissions_do() {

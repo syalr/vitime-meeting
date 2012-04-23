@@ -9,3 +9,7 @@
         </ul>
     </div>
 <?php endif;?>
+    <link rel="stylesheet" type="text/css" href="/js/lib/css/ui-lightness/jquery-ui-1.8.19.custom.css" />
+    <script src='/js/lib/jquery-ui-1.8.19.custom.min.js'></script>
+    <script src='/js/lib/jquery.ui.datepicker-zh-CN.js'></script>
+    <script src='/js/company.js'></script>

@@ -21,7 +21,7 @@
                     <td class="td1"><?php echo $meeting['id']?></td>
                     <td class="td2"><?php echo $meeting['title']?></td>
                     <td class="td3"><?php echo $meeting['start_time']?></td>
-                    <td class="td4"><?php echo ceil((strtotime($meeting['start_time'])-strtotime($meeting['end_time']))/60)?>Min</td>
+                    <td class="td4"><?php echo $meeting['time_length']?>Min</td>
                     <td class="td5">
                     <?php if(strtotime($meeting['end_time']) < time()):?>
                     	<button type="button" class="btn btnBlueSm mg-r10" onclick='enter_meeting(<?php echo $meeting['id']?>)'>进入</button>

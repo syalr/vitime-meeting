@@ -43,5 +43,4 @@
     <div class="pageBox">
     	<?php echo makepage($page,$total,'',10);?>
     </div>
-    <script src='/js/company.js'></script>
     

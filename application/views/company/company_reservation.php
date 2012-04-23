@@ -70,10 +70,3 @@
         <button type="submit" class="btn btnBlue" onclick='do_open_meeting(document.forms.reserForm)'>保存</button>
         <button type="button" class="btn btnRed" onclick='window.location.href="/company/company_meeting"'>取消</button>
     </div>
-    <link rel="stylesheet" type="text/css" href="/js/lib/css/ui-lightness/jquery-ui-1.8.19.custom.css" />
-    <script src='/js/lib/jquery-ui-1.8.19.custom.min.js'></script>
-    <script src='/js/lib/jquery.ui.datepicker-zh-CN.js'></script>
-    <script src='/js/company.js'></script>
-    <script>
-    	
-    </script>

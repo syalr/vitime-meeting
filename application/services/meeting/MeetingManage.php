@@ -100,6 +100,7 @@ class MeetingManage implements IMeetingManage{
 		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['minutes_length'])*60 ));
 		$meeting->type = 1;
 		$meeting->state = 1;
+		$meeting->time_length = intval($postData['minutes_length']);
 		
 		$meeting->usercount = count($user_list);
 		
@@ -124,6 +125,34 @@ class MeetingManage implements IMeetingManage{
 		return $meet_id;
 	}
 
+	/** 
+	 * 发布公共会议
+	 * @param array $postData
+	 * @return 
+	 */
+	public function bookPublicMeeting($postData) {
+		$meeting = new Meeting();	
+		$meeting->title = strip_tags($postData['title']);
+		$meeting->user_id = $this->getUser()->id;
+		$meeting->company_id = $this->getUser()->company_id;
+		$start_time = strtotime($postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'].':00');
+		
+		$meeting->start_time = date('Y-m-d H:i:s',$start_time);
+		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['minutes_length'])*60 ));
+		$meeting->type = 0;
+		$meeting->state = 1;
+		$meeting->password = strip_tags($postData['password']);
+		$meeting->usercount = intval($postData['usercount']);
+		$meeting->time_length = intval($postData['minutes_length']);
+		
+		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
+		$meet_id = $this->CI->MeetingModel->newMeeting($meeting->toArray());
+		if(empty($meet_id) || !is_numeric($meet_id)){
+			return "预约会议失败";
+		}
+		return $meet_id;
+	}
+	
 	/**
 	 * 读取会议信息
 	 * @param unknown_type $meeting_id

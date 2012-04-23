@@ -108,3 +108,21 @@ function do_open_meeting(form){
 function open_public_meeting(){
 	window.location.href = '/company/public_reservation';
 }
+
+
+function do_open_public_meeting(form){
+	if($.trim(form.title.value) == ""){
+		alert('会议主题不能为空');
+		return false;
+	}
+	if($.trim(form.start_time.value) ==''){
+		alert('会议开始时间必须填写');
+		return false;
+	}
+	if($.trim(form.start_time.value) ==''){
+		alert('会议开始时间必须填写');
+		return false;
+	}
+	
+	form.submit();
+}
