@@ -147,6 +147,39 @@ class Admin extends CU_Controller{
 		}
 	}
 	
+
+	public function change_password(){
+		$this->displayHtml();
+	}
+	
+	public function do_change_password(){
+		if(!$this->input->is_post() || empty($_POST)){
+			$this->_redirect('change_password');
+		}
+		$postData = $this->input->post(NULL,TRUE);
+		if(empty($postData['password']) || empty($postData['newpassword'])){
+			$postData['errMsg'] = "密码不能为空，必须填写";
+			$this->displayHtml($postData,'change_password');
+		}
+		$rs = AdminManage::getInstance()->changePassword($postData['password'], $postData['newpassword']);
+		if($rs === true){
+			$_SESSION['change_password_success'] = $rs;
+			$this->_redirect('change_password_success');
+		}else{
+			$postData['errMsg'] = $rs;
+			$this->displayHtml($postData,'change_password');
+		}
+	}
+	
+	public function change_password_success(){
+		if(empty($_SESSION['change_password_success'])){
+			$this->_redirect('change_password');
+		}else{
+			unset($_SESSION['change_password_success']);
+			$this->displayHtml();
+		}
+	}
+	
 	/** 
 	 * 是否有权限
 	 */

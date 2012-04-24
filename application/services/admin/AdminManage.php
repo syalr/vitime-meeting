@@ -245,6 +245,22 @@ class AdminManage {
 		return $userlist;
 	}
 	
+	public function changePassword($oldPwd,$newPwd){
+		$user = $this->getUser();
+		if(make_password($user->username, $oldPwd)!= $user->password){
+			return "旧密码不正确";
+		}
+		
+		$newPwd = make_password($user->username, $newPwd);
+		$this->CI->load->model('admin/Admin_model');
+		$where = array('id'=>$user->id);
+		$rs = $this->CI->Admin_model->update(array('password'=>$newPwd),$where);
+		if($rs == 1){
+			return true;
+		}
+		return "修改密码失败";
+	}
+	
 }
 
 ?>

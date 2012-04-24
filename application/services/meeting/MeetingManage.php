@@ -97,10 +97,10 @@ class MeetingManage implements IMeetingManage{
 		$start_time = strtotime($postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'].':00');
 		
 		$meeting->start_time = date('Y-m-d H:i:s',$start_time);
-		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['minutes_length'])*60 ));
+		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['time_length'])*60 ));
 		$meeting->type = 1;
 		$meeting->state = 1;
-		$meeting->time_length = intval($postData['minutes_length']);
+		$meeting->time_length = intval($postData['time_length']);
 		
 		$meeting->usercount = count($user_list);
 		
@@ -138,12 +138,12 @@ class MeetingManage implements IMeetingManage{
 		$start_time = strtotime($postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'].':00');
 		
 		$meeting->start_time = date('Y-m-d H:i:s',$start_time);
-		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['minutes_length'])*60 ));
+		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['time_length'])*60 ));
 		$meeting->type = 0;
 		$meeting->state = 1;
 		$meeting->password = strip_tags($postData['password']);
 		$meeting->usercount = intval($postData['usercount']);
-		$meeting->time_length = intval($postData['minutes_length']);
+		$meeting->time_length = intval($postData['time_length']);
 		
 		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
 		$meet_id = $this->CI->MeetingModel->newMeeting($meeting->toArray());
@@ -165,24 +165,87 @@ class MeetingManage implements IMeetingManage{
 		}
 		return $meeting;
 	}
-/* *
-	 *
+	/* *
+	 * 取消会议
 	 * @see IMeetingManage::cancelMeeting()
 	 */
 	public function cancelMeeting($meeting_id) {
-		// TODO Auto-generated method stub
-		
+		if(!empty($meeting_id)){
+			$this->CI->load->model('meeting/Meeting_model','MeetingModel');
+			$rs = $this->CI->MeetingModel->update(array('state'=>0),array('id'=>$meeting_id));
+			if($rs == 1){
+				$this->CI->load->model('meeting/Meetinguserlog_model','MeetingUserModel');
+				$this->CI->MeetingUserModel->delete(array('meet_id'=>$meeting_id));
+				return true;
+			}
+		}		
+		return false;
 	}
 
-/* *
-	 *
+	/* *
+	 * 修改企业会议
 	 * @see IMeetingManage::changeMeeting()
 	 */
-	public function changeMeeting($meeting_id) {
-		// TODO Auto-generated method stub
+	public function changeMeeting($postData) {
+		$meet_id = $postData['meet_id'];
+		$user_list = explode(',', $postData['user_list']);
+		$user_list = array_unique($user_list);
+		$user_list = array_filter($user_list); 
+		$meeting = new Meeting();	
+		$meeting->title = $postData['title'];
+		$start_time = strtotime($postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'].':00');
 		
+		$meeting->start_time = date('Y-m-d H:i:s',$start_time);
+		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['time_length'])*60 ));
+		$meeting->time_length = intval($postData['time_length']);
+		
+		$meeting->usercount = count($user_list);
+		
+		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
+		//开启事务
+		$this->CI->db->trans_begin();
+		$rs = $this->CI->MeetingModel->update($meeting->toArray(),array('id'=>$meet_id));
+		if(empty($rs) || !is_numeric($rs)){
+			$this->CI->db->trans_rollback();
+			return "编辑会议失败";
+		}
+		$this->CI->load->model('meeting/Meetinguserlog_model','MeetingUserModel');
+		$this->CI->MeetingUserModel->delete(array('meet_id'=>$meet_id));
+		foreach($user_list as $userid){
+			$data = array('meet_id'=>$meet_id,'user_id'=>$userid);
+			$rs = $this->CI->MeetingUserModel->insert($data);
+			if(empty($rs) || !is_numeric($rs)){
+				$this->CI->db->trans_rollback();
+				return "修改会议失败";
+			}
+		}
+		$this->CI->db->trans_commit();
+		return $meet_id;
 	}
 
+	/**
+	 * 修改公共会议
+	 * @param unknown_type $postData
+	 */
+	public function changePublicMeeting($postData){
+		$meet_id = $postData['meet_id'];
+		$meeting = new Meeting();	
+		$meeting->title = strip_tags($postData['title']);
+		$start_time = strtotime($postData['start_time'].' '.$postData['hour'].':'.$postData['minutes'].':00');
+		
+		$meeting->start_time = date('Y-m-d H:i:s',$start_time);
+		$meeting->end_time = date('Y-m-d H:i:s',$start_time + (intval($postData['time_length'])*60 ));
+		$meeting->password = strip_tags($postData['password']);
+		$meeting->usercount = intval($postData['usercount']);
+		$meeting->time_length = intval($postData['time_length']);
+		
+		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
+		$rs = $this->CI->MeetingModel->update($meeting->toArray(),array('id'=>$meet_id));
+		if(empty($rs) || !is_numeric($rs)){
+			return "编辑会议失败";
+		}
+		return $meet_id;
+	}
 /* *
 	 *
 	 * @see IMeetingManage::viewMeeting()

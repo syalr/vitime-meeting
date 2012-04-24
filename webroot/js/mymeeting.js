@@ -49,11 +49,34 @@ function enter_meeting(meeting_id){
 
 //编辑会议
 function edit_company_meeting(meeting_id){
-	
+	window.location.href = '/mymeeting/edit_company_reservation/'+meeting_id;	
+}
+//编辑会议
+function edit_public_meeting(meeting_id){
+	window.location.href = '/mymeeting/edit_public_reservation/'+meeting_id;	
 }
 //删除会议
 function delete_company_meeting(meeting_id){
-	
+	if(meeting_id == ''){
+		alert('参数错误');
+		return;
+	}
+	if(!confirm('您确定要取消该会议吗？')){
+		return false;
+	}
+	$.post('/mymeeting/delete_meeting',{meet_id:meeting_id},function(res){
+		try{
+			eval('res='+res);
+		}catch(ex){
+			alert('发送错误了！');
+		}
+		if(res.status == 1){
+			alert(res.msg);
+			window.location.reload();
+		}else{
+			alert(res.msg);
+		}
+	});
 }
 
 //预约会议
@@ -100,5 +123,41 @@ function do_open_public_meeting(form){
 		return false;
 	}
 	
+	form.submit();
+}
+
+function do_edit_public_meeting(form){
+	if($.trim(form.title.value) == ""){
+		alert('会议主题不能为空');
+		return false;
+	}
+	if($.trim(form.start_time.value) ==''){
+		alert('会议开始时间必须填写');
+		return false;
+	}
+	if($.trim(form.start_time.value) ==''){
+		alert('会议开始时间必须填写');
+		return false;
+	}
+	
+	form.submit();
+}
+
+function do_edit_meeting(form){
+	if($.trim(form.title.value) == ""){
+		alert('会议主题不能为空');
+		return false;
+	}
+	if($.trim(form.start_time.value) ==''){
+		alert('会议开始时间必须填写');
+		return false;
+	}
+	
+	var user_list = [];
+	$('#right_user_list input:checked').each(function(){
+		user_list.push(this.value);
+	});
+	
+	form.user_list.value = user_list.join(',');
 	form.submit();
 }

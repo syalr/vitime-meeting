@@ -34,7 +34,11 @@ class CmpUserManage {
 	}
 	
 	public function getUser(){
-		return $this->cmp_user;
+		if(empty($this->cmp_user)){
+			return $this->cmp_user = UserSession::getUser();
+		}else{
+			return $this->cmp_user;
+		}
 	}
 	
 	/**
@@ -69,6 +73,21 @@ class CmpUserManage {
 		return true;
 	}
 	
+	public function changePassword($oldPwd,$newPwd){
+		$user = $this->getUser();
+		if(make_password($user->username, $oldPwd)!= $user->password){
+			return "旧密码不正确";
+		}
+		
+		$newPwd = make_password($user->username, $newPwd);
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		$where = array('id'=>$user->id);
+		$rs = $this->CI->CompanyUserModel->update(array('password'=>$newPwd),$where);
+		if($rs == 1){
+			return true;
+		}
+		return "修改密码失败";
+	}
 	
 	/**
 	 * 登出

@@ -164,7 +164,7 @@ class CU_Model extends CI_Model{
 			$this->db->delete($this->_name);
 			return $this->db->affected_rows();
 		}
-		$this->db->delete($where);
+		$this->db->delete($this->_name,$where);
 		return $this->db->affected_rows();
 	}
 	

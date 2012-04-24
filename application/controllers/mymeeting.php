@@ -85,6 +85,9 @@ class Mymeeting extends CU_Controller {
 			if(is_numeric($rs) || $rs > 0){
 				$_SESSION['company_meeting_success'] = $rs;
 				$this->_redirect('company_reservation_success');
+			}else{
+				$postData['errMsg'] = $rs;
+				$this->displayHtml($postData,'company_reservation');
 			}
 		}
 	}
@@ -132,6 +135,9 @@ class Mymeeting extends CU_Controller {
 			if(is_numeric($rs) || $rs > 0){
 				$_SESSION['public_meeting_success'] = $rs;
 				$this->_redirect('public_reservation_success');
+			}else{
+				$postData['errMsg'] = $rs;
+				$this->displayHtml($postData,'public_reservation');
 			}
 		}
 	}
@@ -146,6 +152,150 @@ class Mymeeting extends CU_Controller {
 		}
 		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
 		$this->displayHtml($meeting);
+	}
+	
+	/**
+	 * 编辑企业会议
+	 */
+	public function edit_company_reservation($meet_id = null){
+		if(empty($meet_id)){
+			$this->_redirect('company_meeting');
+		}
+		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		$meeting['all_user_list'] = CmpAdminManage::getInstance()->listAllUser('name,username,id',0);
+		if($meeting['state'] != 1){
+			$this->displayHtml(array('errMsg'=>'该会议已经锁定，无法编辑','back_url'=>"{$this->_controller}/company_meeting"),'edit_failure');
+		}else{
+			$this->displayHtml($meeting);
+		}
+		
+	}
+	
+	public function do_edit_company_reservation(){
+		$postData = $this->input->post(NULL,TRUE);
+		if(empty($postData)){
+			$this->_redirect('company_meeting');
+		}
+		
+		$errMsg = '';
+		if(empty($postData['meet_id'])){
+			$errMsg .='参数错误&nbsp;&nbsp;';
+		}
+		if(empty($postData['title'])){
+			$errMsg .='会议主题必须填写&nbsp;&nbsp;';
+		}
+		
+		if(empty($postData['start_time'])){
+			$errMsg .="会议开始时间必须填写";
+		}
+		
+		if(!empty($errMsg)){
+			$postData['errMsg'] = $errMsg;
+			$this->displayHtml($postData,'edit_company_reservation');
+		}else{
+			$rs = MeetingManage::getInstance()->changeMeeting($postData);
+			if(is_numeric($rs) || $rs > 0){
+				$_SESSION['company_meeting_success'] = $rs;
+				$this->_redirect('company_reservation_success');
+			}
+		}
+	}
+	
+	/**
+	 * 编辑
+	 */
+	public function edit_public_reservation($meet_id = null){
+		if(empty($meet_id)){
+			$this->_redirect('public_meeting');
+		}
+		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		if($meeting['state'] != 1){
+			$this->displayHtml(array('errMsg'=>'该会议已经锁定，无法编辑','back_url'=>"{$this->_controller}/public_meeting"),'edit_failure');
+		}else{
+			$this->displayHtml($meeting);
+		}
+		
+	}
+	
+	public function do_edit_public_reservation(){
+		$postData = $this->input->post(NULL,TRUE);
+		if(empty($postData)){
+			$this->_redirect('public_reservation');
+		}
+		
+		$errMsg = '';
+		if(empty($postData['meet_id'])){
+			$errMsg .='参数错误&nbsp;&nbsp;';
+		}
+		if(empty($postData['title'])){
+			$errMsg .='会议主题必须填写&nbsp;&nbsp;';
+		}
+		
+		if(empty($postData['start_time'])){
+			$errMsg .="会议开始时间必须填写";
+		}
+		
+		if(!empty($errMsg)){
+			$postData['errMsg'] = $errMsg;
+			$this->displayHtml($postData,'edit_public_reservation');
+		}else{
+			$rs = MeetingManage::getInstance()->changePublicMeeting($postData);
+			if(is_numeric($rs) || $rs > 0){
+				$_SESSION['public_meeting_success'] = $rs;
+				$this->_redirect('public_reservation_success');
+			}
+		}
+	}
+	
+	public function delete_meeting(){
+		if(!$this->input->is_post() && !$this->input->is_ajax_request()){
+			$this->_redirect('company_meeting');
+		}
+		$meet_id = $this->input->post('meet_id',true);
+		$meet_id = trim(strip_tags($meet_id));
+		if(!is_numeric($meet_id)){
+			exit(json_encode(array('status'=>0,'msg'=>'参数错误')));
+		}
+		
+		$rs = MeetingManage::getInstance()->cancelMeeting($meet_id);
+		if($rs == 1){
+			exit(json_encode(array('status'=>1,'msg'=>'会议已经成功取消')));
+		}else{
+			exit(json_encode(array('status'=>0,'msg'=>'会议取消失败')));
+		}
+	}
+	
+
+	public function change_password(){
+		$this->displayHtml();
+	}
+	
+	public function do_change_password(){
+		if(!$this->input->is_post() || empty($_POST)){
+			$this->_redirect('change_password');
+		}
+		$postData = $this->input->post(NULL,TRUE);
+		if(empty($postData['password']) || empty($postData['newpassword'])){
+			$postData['errMsg'] = "密码不能为空，必须填写";
+			$this->displayHtml($postData,'change_password');
+		}
+		$rs = CmpUserManage::getInstance()->changePassword($postData['password'], $postData['newpassword']);
+		if($rs === true){
+			$_SESSION['change_password_success'] = $rs;
+			$this->_redirect('change_password_success');
+		}else{
+			$postData['errMsg'] = $rs;
+			$this->displayHtml($postData,'change_password');
+		}
+	}
+	
+	public function change_password_success(){
+		if(empty($_SESSION['change_password_success'])){
+			$this->_redirect('change_password');
+		}else{
+			unset($_SESSION['change_password_success']);
+			$this->displayHtml();
+		}
 	}
 	
 	protected function _has_permissions_do() {
