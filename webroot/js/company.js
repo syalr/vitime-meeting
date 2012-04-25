@@ -6,6 +6,8 @@
 var meeting_user_list = {};
 jQuery(function(){
 	$('.meeting_row').click(function(){
+		$('.selected-tr').removeClass('selected-tr');
+		$(this).addClass('selected-tr');
 		var id = this.id.split('-').pop();
 		if(typeof(meeting_user_list[id]) == 'object' && meeting_user_list[id].length >0){
 			return render_meeting_user_list(meeting_user_list[id]);
@@ -22,9 +24,9 @@ jQuery(function(){
 function render_meeting_user_list(list){
 	$('#meeting_user_list').empty();
 	$.each(list ,function(index,item){
-		$('#meeting_user_list').append('<div class="spanUser"><span class="icon icon-freg"></span><span class="username">'+item+'</span></div>');
+		$('#meeting_user_list').append('<div class="spanUser"><span class="icon icon-freg"></span><span class="username">'+((item.name!='')?item.name:item.username)+'</span></div>');
 	});
-	$('#meeting_user_list').append('<div class="clearfix"></div>');
+	$('#meeting_user_list').append('<div class="clearfix"></div>').parent().parent().show();;
 	
 		
 }
@@ -68,7 +70,7 @@ function delete_company_user(user_id){
 
 //进入会议
 function enter_meeting(meeting_id){
-	
+	window.location.href = '/company/enter_meeting/'+meeting_id;
 }
 
 //编辑会议

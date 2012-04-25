@@ -298,9 +298,57 @@ class Mymeeting extends CU_Controller {
 		}
 	}
 	
+	/**
+	 * 进入会议
+	 * @param unknown_type $meet_id
+	 */
+	public function enter_meeting($meet_id){
+		if(empty($meet_id)){
+			$this->back();
+		}
+		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		if(empty($meeting['password'])){
+			$this->_redirect('meeting');
+		}
+		$meeting['_action'] = 'public_meeting';
+		$this->displayHtml($meeting);
+	}
+	
+	public function do_enter_meeting(){
+		if(empty($_POST)){
+			$this->back();
+		}
+		$meeting_id = $this->input->post('meet_id',true);
+		$password = $this->input->post('password',TRUE);
+		$meeting = MeetingManage::getInstance()->getMeetingInfo($meeting_id);
+		if(empty($password)){
+			$meeting['errMsg'] = '密码不能为空';
+			$this->displayHtml($meeting,'enter_meeting');
+		}else{
+			if($password !=  $meeting['password']){
+				$meeting['errMsg'] = '密码错误，请重新输入';
+				$this->displayHtml($meeting,'enter_meeting');
+			}else{
+				$this->_redirect('meeting');
+			}
+		}
+		
+	}
+	
+	public function meeting(){
+		exit('meeting');
+	}
+	
+	private function back(){
+		exit('<script>window.history.back()</script>');
+	}
+	
 	protected function _has_permissions_do() {
 		return $this->_user->isCmpUser();
 	}
+	
+	
+
 }
 
 ?>

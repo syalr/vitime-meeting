@@ -168,6 +168,7 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .dataGrid .td3{}
 .dataGrid .td4{}
 .dataGrid .td5{}
+.dataGrid .selected-tr{background-color:#CCFFFF}
 .pageBox{ padding:0px 20px;}
 .page{ border:1px solid #ddd; height:25px; line-height:28px; width:470px; padding-left:10px;}
 .page span{ width:25px; height:25px; display:block; float:left; text-align:center; cursor:pointer;}
@@ -177,3 +178,4 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .page .more{ width:70px;}
 .page .last{ border-left:1px solid #ddd;}
 .page .last input{border:1px solid #ccc; width:50px; margin-left:10px; height:12px;}
+
