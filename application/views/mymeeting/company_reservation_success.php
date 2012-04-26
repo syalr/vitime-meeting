@@ -8,6 +8,7 @@
         	<span class="icon icon-att"></span>
             <div class="regTxt">
             	会议主题：<?php echo $title?><br>会议时间：<?php echo $start_time?>-<?php echo (substr($start_time,0,10)==substr($end_time,0,10)?substr($end_time,10):$end_time); ?>
+            	
             </div>
         </div>
     </div>
@@ -21,8 +22,9 @@
                     <td class="td2">使用电脑默认邮件客户端发送会议邀请给会议的参与者。</td>
                   </tr>
                   <tr>
-                    <td class="td1"><button type="button" class="btn btnBlue">复制会议信息</button></td>
+                    <td class="td1"><button type="button" class="btn btnBlue" onclick='fn_copy("meeting-content")'>复制会议信息</button></td>
                     <td class="td2">复制会议的详细信息，使用聊天工具或者网页邮箱发送给与会者。</td>
+                        
                   </tr>
                   <tr>
                     <td class="td1"><button type="button" class="btn btnBlue">发送短信</button></td>
@@ -32,3 +34,4 @@
             </div>
         </div>
     </div>
+<div id='meeting-content' style='display:none;'><?php echo '主题：',trim($title),'，开始时间：',trim($start_time),'，时长：',trim($time_length),'，参会人员：'?><?php foreach($user_list as $user):?><?php echo trim($user['username']).','?><?php endforeach;?></div>

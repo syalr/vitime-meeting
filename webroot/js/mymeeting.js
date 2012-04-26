@@ -33,7 +33,10 @@ function render_meeting_user_list(list){
 
 //预约会议界面，版定用户选择
 jQuery(function(){
-	$('#start_time').datepicker();
+	if($('#start_time').length >0){
+		$('#start_time').datepicker();
+	}
+	
 	$('#left_user_list input:checkbox').live('click',function(){
     	$('#right_user_list').append($(this).parent().remove());
     });

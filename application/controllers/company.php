@@ -225,6 +225,9 @@ class Company extends CU_Controller{
 			if(is_numeric($rs) || $rs > 0){
 				$_SESSION['company_meeting_success'] = $rs;
 				$this->_redirect('company_reservation_success');
+			}else{
+				$postData['errMsg'] = $rs;
+				$this->displayHtml($postData,'company_reservation');
 			}
 		}
 	}
@@ -239,6 +242,7 @@ class Company extends CU_Controller{
 			$this->_redirect('company_meeting');
 		}
 		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		$meeting['user_list'] = MeetingManage::getInstance()->listCmpMeetingUser($meet_id);
 		$this->displayHtml($meeting);
 	}
 	
@@ -272,6 +276,9 @@ class Company extends CU_Controller{
 			if(is_numeric($rs) || $rs > 0){
 				$_SESSION['public_meeting_success'] = $rs;
 				$this->_redirect('public_reservation_success');
+			}else{
+				$postData['errMsg'] = $rs;
+				$this->displayHtml($postData,'public_reservation');
 			}
 		}
 	}
@@ -308,7 +315,8 @@ class Company extends CU_Controller{
 	
 	public function do_edit_company_reservation(){
 		$postData = $this->input->post(NULL,TRUE);
-		if(empty($postData)){
+		$meet_id = $postData['meet_id'];
+		if(empty($postData) || empty($meet_id)){
 			$this->_redirect('company_meeting');
 		}
 		
@@ -325,13 +333,20 @@ class Company extends CU_Controller{
 		}
 		
 		if(!empty($errMsg)){
-			$postData['errMsg'] = $errMsg;
-			$this->displayHtml($postData,'edit_company_reservation');
+			$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+			$meeting['all_user_list'] = CmpAdminManage::getInstance()->listAllUser('name,username,id',0);
+			$meeting['errMsg'] = $errMsg;
+			$this->displayHtml($meeting,'edit_company_reservation');
 		}else{
 			$rs = MeetingManage::getInstance()->changeMeeting($postData);
 			if(is_numeric($rs) || $rs > 0){
 				$_SESSION['company_meeting_success'] = $rs;
 				$this->_redirect('company_reservation_success');
+			}else{
+				$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+				$meeting['all_user_list'] = CmpAdminManage::getInstance()->listAllUser('name,username,id',0);
+				$meeting['errMsg'] = $rs;
+				$this->displayHtml($meeting,'edit_company_reservation');
 			}
 		}
 	}
@@ -378,6 +393,9 @@ class Company extends CU_Controller{
 			if(is_numeric($rs) || $rs > 0){
 				$_SESSION['public_meeting_success'] = $rs;
 				$this->_redirect('public_reservation_success');
+			}else{
+				$postData['errMsg'] = $rs;
+				$this->displayHtml($postData,'edit_public_reservation');
 			}
 		}
 	}
