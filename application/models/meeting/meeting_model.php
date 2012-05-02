@@ -41,7 +41,7 @@ class Meeting_model extends CU_Model{
 		}
 		$page = max(intval($page),1);
 		$offset = ($page - 1)*$limit;
-		$where = array('company_id'=>$company_id,'type'=>1);
+		$where = array('company_id'=>$company_id,'type'=>1,'state !='=>'0');
 		return $this->selectByPage('*',$where,"(user_id={$user_id}) desc,start_time desc",$limit,$offset);
 	}
 	

@@ -93,7 +93,7 @@ class Company_user_model extends CU_Model {
 		$page = max(intval($page),1);
 		$offset = ($page - 1)*$limit;
 		
-		$where = array('status'=>'1','priority'=>2);
+		$where = array('company_id'=>$cmpId,'status'=>'1','priority'=>2);
 		return $this->selectByPage('*', $where,'id desc',$limit,$offset);
 	}
 	
