@@ -13,18 +13,28 @@
                 	<label>公司标识：</label>
                     <input type="text" name="company_mark" class="inputStyle"  value='<?php echo $company_mark?>'/>
                 </li>
-                <li>
                 <?php if(!empty($errMsg)):?>
+                <li>
                 	<div class="errorTip">
                      	<span class="icon icon-error"></span><?php echo $errMsg?>
                     </div>
-                <?php endif;?>
                 </li>
-                <li class="loginBtn">
-                	<div class="pos1"><input type="checkbox" class="mg-r10" name='keepme' value='1'/>记住我</div>
-                    <div class="pos2"><span class="icon icon-fpwd"></span><a href="#">忘记密码 ?</a></div>
-                    <a href="javascript:void()" onclick="admin_login();return false;" class="btn btnBlue pos3">登 录</a>
-                    <div class="pos4"><span class="icon icon-freg"></span><a href="/members/register">还未注册 ?</a></div>
+                <?php endif;?>
+				<li>
+				<div class="fvalue">
+				<button type="submit" class="btn btnBlue">登 录</button>
+				<button type="reset" class="btn btnBlue" onclick="window.location.href='/tourist'">进入公共会议</button>
+				</div>
+				</li>
+                <li>
+                	<input type="checkbox" class="mg-r10" name='keepme' value='1'/>记住我
+                	<span class="icon icon-fpwd"></span><a href="#">忘记密码 ?</a>
+                	<span class="icon icon-freg"></span><a href="/members/register">还未注册 ?</a>
+                </li>
+                <li>
+                <div style='height:50px;'>
+                &nbsp;
+				</div>
                 </li>
             </ul>
         </form>

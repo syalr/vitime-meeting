@@ -99,7 +99,7 @@
                 </li>
                 <li>
                 	<div class="fname"></div>
-                    <div class="fvalue"><button type="submit" class="btn btnBlue">注 册</button></div>
+                    <div class="fvalue"><button type="submit" class="btn btnBlue">注 册</button><button type="reset" class="btn btnBlue" onclick='window.history.back()'>取消</button></div>
                     <div class="ftip"></div>
                 </li>
             </ul>

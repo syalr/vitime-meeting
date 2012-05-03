@@ -20,7 +20,11 @@
                   <tr class='meeting_row' id='meeting-<?php echo $meeting['id'] ?>'>
                     <td class="td1"><?php echo $meeting['id']?></td>
                     <td class="td2"><?php echo $meeting['title']?></td>
-                    <td class="td3"><?php echo $meeting['start_time']?></td>
+                    <td class="td3"><?php echo $meeting['start_time']?>
+                    <?php if(strtotime($meeting['end_time']) > time()):?>
+                    &nbsp;<span style='color:red;'>已过期</span>
+                    <?php endif;?>
+                    </td>
                     <td class="td4"><?php echo $meeting['time_length']?>Min</td>
                     <td class="td5">
                     <?php if(strtotime($meeting['end_time']) > time()):?>
