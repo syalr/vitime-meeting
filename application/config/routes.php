@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "members";
+$route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
 $route['meeting/index/ce_checkUser.php'] = "meeting/checkuser";
