@@ -1,4 +1,4 @@
-<?php $this->load->view('/company/cmp_admin_nav.php')?>
+<?php $this->load->view('/mymeeting/cmp_user_nav.php')?>
 <div class="regBox">
     	<form id="updateuserForm" name="updateuserForm" class="regForm" method='post' action='/mymeeting/do_change_password'>
     	<input type='hidden' name='user_id' value='<?php echo $id ?>' />

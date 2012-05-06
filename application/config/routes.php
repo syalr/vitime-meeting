@@ -41,6 +41,8 @@
 $route['default_controller'] = "members";
 $route['404_override'] = '';
 
+$route['meeting/index/ce_checkUser.php'] = "meeting/checkuser";
+$route['meeting/index/CeCallMeet.swf'] = "meeting/cecallmeetswf";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

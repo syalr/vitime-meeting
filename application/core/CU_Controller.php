@@ -145,6 +145,8 @@ abstract class CU_Controller extends CI_Controller {
 			$this->load->view('/header.php');
 			$this->load->view($template_dir);
 			$this->load->view('/footer.php');
+		}else{
+			$this->load->view($template_dir);
 		}
 	}
 	

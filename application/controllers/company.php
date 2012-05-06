@@ -460,7 +460,7 @@ class Company extends CU_Controller{
 		}
 		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
 		if(empty($meeting['password'])){
-			$this->_redirect('meeting');
+			redirect('/meeting/index/'.$meet_id);
 		}
 		$meeting['_action'] = 'public_meeting';
 		$this->displayHtml($meeting);
@@ -481,7 +481,7 @@ class Company extends CU_Controller{
 				$meeting['errMsg'] = '密码错误，请重新输入';
 				$this->displayHtml($meeting,'enter_meeting');
 			}else{
-				$this->_redirect('meeting');
+				redirect('/meeting/index/'.$meeting_id);
 			}
 		}
 		

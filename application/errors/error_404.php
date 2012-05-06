@@ -65,5 +65,9 @@ p {
 		<h1>发生404错误</h1>
 		您访问的页面不存在
 	</div>
+	<div id="container">
+		<a href='javascript:void(0);' style='margin-left:20px;' onclick='window.history.back()'>返回上一页</a>
+		<a href='/' style='margin-left:20px;'>返回首页</a>
+	</div>
 </body>
 </html>

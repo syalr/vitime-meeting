@@ -49,7 +49,7 @@ jQuery(function(){
 
 //进入会议
 function enter_meeting(meeting_id){
-	window.location.href = '/mymeeting/enter_meeting/'+meeting_id;
+	window.location.href = '/meeting/index/'+meeting_id;
 }
 
 //编辑会议

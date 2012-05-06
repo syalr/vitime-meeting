@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Database Error</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微泰移动视频会议系统-发生了数据库错误</title>
 <style type="text/css">
 
 ::selection{ background-color: #E13300; color: white; }
@@ -45,7 +46,8 @@ code {
 #container {
 	margin: 10px;
 	border: 1px solid #D0D0D0;
-	-webkit-box-shadow: 0 0 8px #D0D0D0;
+	box-shadow: 0 0 8px #D0D0D0;
+	padding:10px;
 }
 
 p {
@@ -57,6 +59,10 @@ p {
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
+	</div>
+	<div id="container">
+		<a href='javascript:void(0);' style='margin-left:20px;' onclick='window.history.back()'>返回上一页</a>
+		<a href='/' style='margin-left:20px;'>返回首页</a>
 	</div>
 </body>
 </html>

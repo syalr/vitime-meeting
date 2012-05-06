@@ -72,7 +72,7 @@ function delete_company_user(user_id){
 
 //进入会议
 function enter_meeting(meeting_id){
-	window.location.href = '/company/enter_meeting/'+meeting_id;
+	window.location.href = '/meeting/index/'+meeting_id;
 }
 
 //编辑会议

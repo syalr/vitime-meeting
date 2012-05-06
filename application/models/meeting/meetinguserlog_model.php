@@ -53,4 +53,10 @@ class Meetinguserlog_model extends CU_Model{
 		return $query->result_array();	
 	}
 	
+	public function getMeetByMUid($meet_id,$uid){
+		$where = array('meet_id'=>intval($meet_id),'user_id'=>$uid);
+		return $this->fetchRow($where);
+	}
+	
+	
 }

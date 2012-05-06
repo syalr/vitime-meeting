@@ -3,27 +3,19 @@ require_once SERVICE_DIR.'company/CmpUserManage.php';
 require_once SERVICE_DIR.'company/CmpAdminManage.php';
 require_once SERVICE_DIR.'meeting/MeetingManage.php';
 
-class Mymeeting extends CU_Controller {
+class Tourist extends CU_Controller {
 	
 	public function __construct(){
 		parent::__construct();
-		$this->_needValidLogin(true);
+		$this->_needValidLogin(false);
 	}
 	
 	public function index(){
-		$this->_redirect('company_meeting');
+		$this->_redirect('public_meeting');
 	}
 	
 
-	/**
-	 * 企业会议列表
-	 */
-	public function company_meeting(){
-		$page = $this->input->get('page',true);
-		
-		$meetingList = MeetingManage::getInstance()->listCmpMeeting($page);
-		$this->displayHtml($meetingList);
-	}
+	
 	
 	/**
 	 * 公共会议列表
@@ -318,7 +310,7 @@ class Mymeeting extends CU_Controller {
 		}
 		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
 		if(empty($meeting['password'])){
-			redirect('/meeting/index/'.$meet_id);
+			$this->_redirect('meeting');
 		}
 		$meeting['_action'] = 'public_meeting';
 		$this->displayHtml($meeting);
@@ -339,15 +331,14 @@ class Mymeeting extends CU_Controller {
 				$meeting['errMsg'] = '密码错误，请重新输入';
 				$this->displayHtml($meeting,'enter_meeting');
 			}else{
-				redirect('/meeting/index/'.$meeting_id);
+				$this->_redirect('meeting');
 			}
 		}
 		
 	}
 	
 	public function meeting(){
-		$meeting_id = $this->input->post('meet_id',true);
-		redirect('/meeting/index/'.$meeting_id);
+		exit('meeting');
 	}
 	
 	private function back(){
@@ -355,7 +346,7 @@ class Mymeeting extends CU_Controller {
 	}
 	
 	protected function _has_permissions_do() {
-		return $this->_user->isCmpUser();
+		return true;
 	}
 	
 	

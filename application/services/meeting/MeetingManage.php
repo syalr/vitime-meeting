@@ -251,10 +251,16 @@ class MeetingManage implements IMeetingManage{
 	 * @see IMeetingManage::viewMeeting()
 	 */
 	public function viewMeeting($meeting_id) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
+	public function havePureToViewMeeting($meeting_id){
+		$userid = $this->getUser()->id;
+		$this->CI->load->model('meeting/Meetinguserlog_model','MeetingUserModel');
+		$meetingLog = $this->CI->MeetingUserModel->getMeetByMUid($meeting_id,$userid);
+		return !empty($meetingLog);
+	}
 	
 	
 }
