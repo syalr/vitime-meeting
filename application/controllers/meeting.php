@@ -28,7 +28,7 @@ class Meeting extends CU_Controller{
 		}
 		
 		if($_SESSION['view-meeting-'.$meet_id] == $meet_id){
-			return $this->view($meet_id);
+			return $this->view($meeting);
 		}
 		
 		if($meeting['type'] == 1){
@@ -41,10 +41,10 @@ class Meeting extends CU_Controller{
 				show_error(array('您没有权限参与该会议','to_url'=>$to_url),200,'权限错误');
 			}
 			$_SESSION['view-meeting-'.$meet_id] = $meet_id;
-			$this->view($meet_id);
+			$this->view($meeting);
 		}else{
 			if(empty($meeting['password'])){
-				$this->view($meet_id);
+				$this->view($meeting);
 			}else{
 				$this->displayHtml($meeting,'enter_meeting');
 			}
@@ -56,15 +56,15 @@ class Meeting extends CU_Controller{
 	 * 刷出会议界面
 	 * @param int $meet_id
 	 */
-	private function view($meet_id){
+	private function view($meeting){
 		
 		$user = $this->_user;
 		
 		$userName= $user->username; 
 		$mediaServer="m.cecall.cc";
-		$role = (UserSession::isLogin() && $user->isCmpAdmin())?2:4;  //4:普通用户 2:管理员
+		$role = (UserSession::isLogin() && $meeting['user_id'] == $this->_user->id)?2:4;  //4:普通用户 2:管理员
 		$password=md5("123456");
-		$roomID=$meet_id;
+		$roomID=$meeting['id'];
 		$scriptType="php";
 		$realName=$user->name?"{$user->name}":"{$user->username}";
 		$connStr="userName={$userName}&realName={$realName}&&password={$password}&mediaServer={$mediaServer}&role={$role}&roomID={$roomID}&scriptType={$scriptType}";
