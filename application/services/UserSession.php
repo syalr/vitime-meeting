@@ -2,6 +2,7 @@
 require_once SERVICE_DIR.'users/SysAdmin.php';
 require_once SERVICE_DIR.'users/CmpAdmin.php';
 require_once SERVICE_DIR.'users/CmpUser.php';
+require_once SERVICE_DIR.'users/TouristUser.php';
 /**
  * 用户会话管理
  *  
@@ -21,7 +22,11 @@ class UserSession {
 	public static function getUser(){
 		if(is_null(self::$_user)){
 			self::$_user = unserialize($_SESSION[self::USER_TAG]);
-		}
+			if(empty(self::$_user) || !(self::$_user instanceof IUser) || intval(self::$_user->id)<=0){
+				self::setUser(new TouristUser());
+				self::$_user = unserialize($_SESSION[self::USER_TAG]);
+			}
+		}		
 		return self::$_user;
 	}
 	
@@ -31,7 +36,8 @@ class UserSession {
 	 * @return void
 	 */
 	public static function setUser(IUser $user = null){
-		self::$_user = $_SESSION[self::USER_TAG] = serialize($user);
+		$_SESSION[self::USER_TAG] = serialize($user);
+		self::$_user = $user;
 	}
 	
 	/**

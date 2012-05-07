@@ -62,7 +62,7 @@ class Meeting extends CU_Controller{
 		
 		$userName= $user->username; 
 		$mediaServer="m.cecall.cc";
-		$role = $user->isCmpAdmin()?2:4;  //4:普通用户 2:管理员
+		$role = (UserSession::isLogin() && $user->isCmpAdmin())?2:4;  //4:普通用户 2:管理员
 		$password=md5("123456");
 		$roomID=$meet_id;
 		$scriptType="php";
@@ -101,7 +101,7 @@ class Meeting extends CU_Controller{
 	 */
 	public function checkuser(){
 		$meet_id =  $this->input->get('roomID');
-		$role=$this->input->get('roomID');
+		$role=$this->input->get('role');
 		if($role != 2 && $role != 4){
 			echo "<Result isUser='false'>","</Result>";
 			exit();

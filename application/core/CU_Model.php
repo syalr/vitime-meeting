@@ -57,7 +57,7 @@ class CU_Model extends CI_Model{
 	 * @param string $method 方法名
 	 * @param array $args 参数列表
 	 */
-	protected function __call($method, $args)  
+	public function __call($method, $args)  
     {  
     	if(!method_exists($this->db,$method)){
     		show_error('Not found method:'.$method.' in db');
