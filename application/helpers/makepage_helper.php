@@ -72,7 +72,7 @@ function makepage($page, $total, $phpfile, $pagesize = 3, $pagelen = 10) {
 	}
 	if ($page != $pages) {
 		$pagecode.="<span class='arrow'><a href='{$phpfile}?page=".($page+1)."' title='下一页'>&gt;</a></span>"; //下一页
-		$pagecode.="<span class='arrow'><a href='{$phpfile}?page={$pages}' title='最后一页'>&gt;&gt;</a>";//最后一页
+		$pagecode.="<span class='arrow'><a href='{$phpfile}?page={$pages}' title='最后一页'>&gt;&gt;</a></span>";//最后一页
 	}
 	$phpfile = explode('?', $phpfile);
 	$params = $phpfile[1];
