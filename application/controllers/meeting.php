@@ -68,7 +68,7 @@ class Meeting extends CU_Controller{
 		$scriptType="php";
 		$realName=$user->name?"{$user->name}":"{$user->username}";
 		$connStr="userName={$userName}&realName={$realName}&&password={$password}&mediaServer={$mediaServer}&role={$role}&roomID={$roomID}&scriptType={$scriptType}";
-		
+		$_SESSION['view-meeting-role-'.$roomID] = $role;
 		$this->displayHtml(array('connStr'=>$connStr),$script='',$template_dir = '',$renderHF = false);
 	}
 	
@@ -107,7 +107,7 @@ class Meeting extends CU_Controller{
 			exit();
 		}
 		
-		$good_role = $this->_user->isCmpAdmin()? 2:4;  //4:普通用户 2:管理员
+		$good_role = $_SESSION['view-meeting-role-'.$meet_id] ;
 		if($role != $good_role){
 			echo "<Result isUser='false'>","</Result>";
 			exit();

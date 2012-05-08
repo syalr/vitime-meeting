@@ -163,6 +163,13 @@ class Mymeeting extends CU_Controller {
 			$this->_redirect('company_meeting');
 		}
 		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		if($this->_user->id != $meeting['user_id']){
+			$this->back('您没有权限修改该会议');
+		}
+		if($meeting['type'] == 0){
+			redirect('/mymeeting/edit_public_reservation/'.$meet_id);
+		}
+		
 		$meeting['all_user_list'] = CmpAdminManage::getInstance()->listAllUser('name,username,id',0);
 		if($meeting['state'] != 1){
 			$this->displayHtml(array('errMsg'=>'该会议已经锁定，无法编辑','back_url'=>"{$this->_controller}/company_meeting"),'edit_failure');
@@ -216,6 +223,12 @@ class Mymeeting extends CU_Controller {
 			$this->_redirect('public_meeting');
 		}
 		$meeting = MeetingManage::getInstance()->getMeetingInfo($meet_id);
+		if($this->_user->id != $meeting['user_id']){
+			$this->back('您没有权限修改该会议');
+		}
+		if($meeting['type'] == 1){
+			redirect('/mymeeting/edit_company_reservation/'.$meet_id);
+		}
 		if($meeting['state'] != 1){
 			$this->displayHtml(array('errMsg'=>'该会议已经锁定，无法编辑','back_url'=>"{$this->_controller}/public_meeting"),'edit_failure');
 		}else{
@@ -406,8 +419,14 @@ class Mymeeting extends CU_Controller {
 		$this->displayHtml();
 	}
 	
-	private function back(){
-		exit('<script>window.history.back()</script>');
+	private function back($msg = null){
+		if(empty($msg)){
+			$alert = '';
+		}else{
+			$alert = 'alert("'.$msg.'");';
+		}
+		header('Content-Type:text/html;charset=utf-8');
+		exit('<script>'.$alert.'window.history.back()</script>');
 	}
 	
 	protected function _has_permissions_do() {

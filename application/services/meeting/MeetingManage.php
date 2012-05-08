@@ -30,6 +30,9 @@ class MeetingManage implements IMeetingManage{
 		$this->CI = &get_instance();
 	}
 	
+	/**
+	 * @return MeetingManage
+	 */
 	public static function getInstance(){
 		if(self::$_instance instanceof MeetingManage){
 			return self::$_instance;
@@ -170,8 +173,21 @@ class MeetingManage implements IMeetingManage{
 	 * @see IMeetingManage::cancelMeeting()
 	 */
 	public function cancelMeeting($meeting_id) {
+		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
+		if(empty($meeting_id)){
+			return "参数错误";
+		}
+		$meeting = $this->CI->MeetingModel->get($meeting_id);
+		if($meeting['company_id']!=0 && $this->getUser()->company_id != $meeting['company_id']){
+			return '您没有权限修改该会议';
+		}
+		
+		if($this->getUser()->id != $meeting['user_id'] && !$this->getUser()->isCmpAdmin()){
+			return '您没有权限修改该会议';
+		}
+		
+		
 		if(!empty($meeting_id)){
-			$this->CI->load->model('meeting/Meeting_model','MeetingModel');
 			$rs = $this->CI->MeetingModel->update(array('state'=>0),array('id'=>$meeting_id));
 			if($rs == 1){
 				$this->CI->load->model('meeting/Meetinguserlog_model','MeetingUserModel');
@@ -187,7 +203,24 @@ class MeetingManage implements IMeetingManage{
 	 * @see IMeetingManage::changeMeeting()
 	 */
 	public function changeMeeting($postData) {
+		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
 		$meet_id = $postData['meet_id'];
+		if(empty($meet_id)){
+			return "参数错误";
+		}
+		$meeting = $this->CI->MeetingModel->get($meet_id);
+		if(empty($meeting)){
+			return "该会议不存在";
+		}
+		
+		if($meeting['company_id']!=0 && $this->getUser()->company_id != $meeting['company_id']){
+			return '您没有权限修改该会议';
+		}
+		
+		if($this->getUser()->id != $meeting['user_id'] && !$this->getUser()->isCmpAdmin()){
+			return '您没有权限修改该会议';
+		}
+		
 		$user_list = explode(',', $postData['user_list']);
 		$user_list = array_unique($user_list);
 		$user_list = array_filter($user_list); 
@@ -201,7 +234,7 @@ class MeetingManage implements IMeetingManage{
 		
 		$meeting->usercount = count($user_list);
 		
-		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
+		
 		//开启事务
 		$this->CI->db->trans_begin();
 		$rs = $this->CI->MeetingModel->update($meeting->toArray(),array('id'=>$meet_id));
