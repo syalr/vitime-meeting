@@ -21,7 +21,7 @@
                     <td class="td2">使用电脑默认邮件客户端发送会议邀请给会议的参与者。</td>
                   </tr>
                   <tr>
-                    <td class="td1"><button type="button" class="btn btnBlue" onclick='fn_copy("meeting-content")'>复制会议信息</button></td>
+                    <td class="td1"><button type="button" class="btn btnBlue" id='copy_button' >复制会议信息</button></td>
                     <td class="td2">复制会议的详细信息，使用聊天工具或者网页邮箱发送给与会者。</td>
                   </tr>
                   <tr>
@@ -32,9 +32,4 @@
             </div>
         </div>
     </div>
-    <div id='meeting-content' style='display:none;'>
-    <?php echo '主题：',trim($title),'，开始时间：',trim($start_time),'，时长：',trim($time_length),'，参会人员：'?>
-    <?php foreach($user_list as $user):?>
-    <?php echo trim($user['username']).','?>
-    <?php endforeach;?>
-    </div>
+    <textarea id='meeting-content' style='display:none;'><?php echo '主题：',trim($title),PHP_EOL,'开始时间：',trim($start_time),PHP_EOL,'时长：',trim($time_length),PHP_EOL,'参会人员：'?><?php $username = ''; foreach($user_list as $user):?><?php $username .= trim($user['username']).','?><?php endforeach;echo trim(rtrim($username,','));?></textarea>

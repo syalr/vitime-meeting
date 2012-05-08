@@ -3,7 +3,7 @@
  */
 
 jQuery(function(){
-	
+	fn_copy();
 });
 
 
@@ -35,44 +35,42 @@ function loadFormValid(){
 	});
 }
 
-function fn_copy(meinId) {
-    var meintext = document.getElementById(meinId).innerHTML;
-    if (window.clipboardData) {
-        // the IE-manier
-        window.clipboardData.setData("Text", meintext);
-        // waarschijnlijk niet de beste manier om Moz/NS te detecteren;
-        // het is mij echter onbekend vanaf welke versie dit precies werkt:
-        return alert("已复制到剪贴版");
-    } else if (window.netscape) {
-        try {
-            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-        } catch(e) {
-            alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");
-        }
-        // dit is belangrijk maar staat nergens duidelijk vermeld:
-        // you have to sign the code to enable this, or see notes below
-        // netscape.security.PrivilegeManager.enablePrivilege('UniversalXPConnect');
-        // maak een interface naar het clipboard
-        var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
-        if (!clip) return;
-        // maak een transferable
-        var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
-        if (!trans) return;
-        // specificeer wat voor soort data we op willen halen; text in dit geval
-        trans.addDataFlavor('text/unicode');
-        // om de data uit de transferable te halen hebben we 2 nieuwe objecten
-        // nodig om het in op te slaan
-        var str = new Object();
-        var len = new Object();
-        var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
-        var copytext = meintext;
-        str.data = copytext;
-        trans.setTransferData("text/unicode", str, copytext.length * 2);
-        var clipid = Components.interfaces.nsIClipboard;
-        if (!clip) return false;
-        clip.setData(trans, null, clipid.kGlobalClipboard);
-        return alert("已复制到剪贴版");
+function fn_copy() {
+	var copy_button = document.getElementById('copy_button');
+	if(!copy_button){
+		return;
+	}
+	if(window.clipboardData){
+		$(copy_button).click(function(){
+			window.clipboardData.setData("Text", $('#meeting-content').html());
+	        debug_log('复制内容：'+meintext);
+	        return alert("已复制到剪贴板");
+		});
+	} else{
+		ZeroClipboard.setMoviePath('/js/ZeroClipboard.swf');
+    	var clip = new ZeroClipboard.Client();
+    	clip.setHandCursor( true );
+    	clip.addEventListener('load', function (client) {
+    		debug_log("Flash movie loaded and ready.");
+		});
+
+		clip.addEventListener('mouseOver', function (client) {
+			clip.setText( $('#meeting-content').html() );
+		});
+
+    	clip.addEventListener('complete', function (client, text) {
+    		return alert("已复制到剪贴板");
+		});
+    	clip.glue('copy_button');
     }
-    alert("您的浏览器不支持复制功能，无法完成复制");
+    //alert("您的浏览器不支持复制功能，无法完成复制");
     return false;
+}
+
+
+
+function debug_log(msg) {
+	if(console && console.log){
+		console.log(msg);
+	}
 }
