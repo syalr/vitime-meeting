@@ -187,7 +187,5 @@ class Admin extends CU_Controller{
 		return !empty($this->_user) && $this->_user->isSysAdmin();
 	}
 	
-	private function wrapErrorMsg($msg){
-		return "<span style='padding-left:19px;'>{$msg}</span><br />";
-	}
+	
 }

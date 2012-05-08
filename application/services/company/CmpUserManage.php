@@ -25,6 +25,11 @@ class CmpUserManage {
 		$this->CI = &get_instance();
 	}
 	
+	/**
+	 * 
+	 * @param CmpUser $user
+	 * @return CmpUserManage
+	 */
 	public static function getInstance(CmpUser $user = NULL){
 		if(self::$_instance instanceof CmpUserManage){
 			return self::$_instance;
@@ -95,6 +100,67 @@ class CmpUserManage {
 	public function logout(){
 		$this->cmp_user = null;
 		UserSession::setUser(null);
+	}
+	
+	/**
+	 * 更新企业管理员
+	 * @param array $postData
+	 */
+	public function updateSelfInfo($postData){
+		$user_id = $this->getUser()->id;
+		$name = $postData['name'];
+		$company_id = $this->getUser()->company_id;
+		$mobile = $postData['mobile'];
+		$email = $postData['email'];
+		
+		//加载数据库访问模型
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		
+		//判断是否存在该用户
+		$cmpUser = $this->CI->CompanyUserModel->getUserById($user_id,$company_id);
+		if(empty($cmpUser)){
+			return "参数错误";
+		}
+		
+		//存储结果
+		$rs = 1;
+		
+		$user = new CmpUser();
+		$user->name = $name;
+		$user->mobile = $mobile;
+		$user->email = $email;
+		
+		 //检查是否有更改
+		$userArr = $user->toArray();
+		$isModify = false;
+		foreach($userArr as $k=>$field){
+			if($cmpUser[$k] != $field){
+				$isModify = true;
+				break;
+			}
+		}
+		
+		if($isModify){
+			$where = array('id'=>$user_id,'company_id'=>$company_id);
+			$rs = $this->CI->CompanyUserModel->update($user->toArray(),$where);
+			if($rs == 1){
+				return true;
+			}else{
+				return "更新员工资料失败";
+			}
+		}
+		return $rs === 1;
+	}
+	
+	public function reloadUserInfo(){
+		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
+		$user = $this->CI->CompanyUserModel->getUser($this->getUser()->username,$this->getUser()->company_id);
+		$this->cmp_user = new CmpUser($user); 
+		
+		$this->CI->load->model('company/Company_model','CompanyModel');
+		$company = $this->CI->CompanyModel->get($user['company_id']);
+		$this->cmp_user->company = $company;
+		UserSession::setUser($this->cmp_user);
 	}
 }
 

@@ -40,10 +40,11 @@ function fn_copy() {
 	if(!copy_button){
 		return;
 	}
+	var meetingContent = $('#meeting-content').val();
 	if(window.clipboardData){
 		$(copy_button).click(function(){
-			window.clipboardData.setData("Text", $('#meeting-content').html());
-	        debug_log('复制内容：'+meintext);
+			window.clipboardData.setData("Text", meetingContent);
+	        debug_log('复制内容：'+meetingContent);
 	        return alert("已复制到剪贴板");
 		});
 	} else{
@@ -52,13 +53,17 @@ function fn_copy() {
     	clip.setHandCursor( true );
     	clip.addEventListener('load', function (client) {
     		debug_log("Flash movie loaded and ready.");
+    		if(meetingContent){
+    			clip.setText( meetingContent );
+    		}
 		});
 
 		clip.addEventListener('mouseOver', function (client) {
-			clip.setText( $('#meeting-content').html() );
+			clip.setText( meetingContent );
 		});
 
     	clip.addEventListener('complete', function (client, text) {
+    		debug_log('复制内容：'+text);
     		return alert("已复制到剪贴板");
 		});
     	clip.glue('copy_button');
@@ -70,7 +75,7 @@ function fn_copy() {
 
 
 function debug_log(msg) {
-	if(console && console.log){
+	if(typeof(console)!='undefined' && typeof(console.log)!='undefined'){
 		console.log(msg);
 	}
 }

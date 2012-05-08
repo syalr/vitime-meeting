@@ -491,6 +491,62 @@ class Company extends CU_Controller{
 		exit('meeting');
 	}
 	
+	/**
+	 * 更新自己资料
+	 * @param int $user_id
+	 */
+	public function update_info(){
+		if(!$this->input->is_post()){
+			$companyUser = $this->_user->toArray();
+			return $this->displayHtml($companyUser);
+		}
+		
+		if(empty($_POST)){
+			$this->_redirect('listuser');
+		}
+		
+		$postData = $this->input->post(NULL,TRUE);
+		$errMsg = '';
+		
+		//去掉html标签
+		foreach($postData as $k=>&$v){
+			$v = trim(strip_tags($v));
+		}
+		
+		$errMsg = '';
+		if(empty($postData['name'])){
+			$errMsg .= $this->wrapErrorMsg("姓名必须填写");
+		}
+		
+		if(empty($postData['mobile'])){
+			$errMsg .= $this->wrapErrorMsg("手机号码必须填写");
+		}
+		
+		if(empty($postData['email'])){
+			$errMsg .= $this->wrapErrorMsg("邮箱必须填写");
+		}
+		
+		if(!empty($errMsg)){
+			$companyUser = $this->_user->toArray();
+			$errMsg = "填写不完整：<br />{$errMsg}";
+			return $this->displayHtml(array_merge($companyUser,array('errMsg'=>$errMsg)));
+		}
+		
+		$loginMsg = CmpAdminManage::getInstance()->updateSelfInfo($postData);
+		if($loginMsg === TRUE){
+			CmpAdminManage::getInstance()->reloadUserInfo();
+			$this->_redirect('update_info_success');
+		}else{
+			$companyUser = $this->_user->toArray();
+			return $this->displayHtml(array_merge($companyUser,array('errMsg'=>"修改失败，$loginMsg")));
+		}
+		
+	}
+	
+	public function update_info_success(){
+		$this->displayHtml();
+	}
+	
 	private function back(){
 		exit('<script>window.history.back()</script>');
 	}

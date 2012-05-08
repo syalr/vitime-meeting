@@ -170,6 +170,10 @@ abstract class CU_Controller extends CI_Controller {
 		$uri = '/'.$controller.'/'.$action.'/'.$params;
 		redirect($uri);
 	}
+	
+	protected function wrapErrorMsg($msg){
+		return "<span style='padding-left:19px;'>{$msg}</span><br />";
+	}
 }
 
 ?>

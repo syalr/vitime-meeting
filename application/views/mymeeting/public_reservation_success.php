@@ -28,4 +28,4 @@
             </div>
         </div>
     </div>
-     <textarea id='meeting-content' style='display:none;'><?php echo '主题：',trim($title),PHP_EOL,'开始时间：',trim($start_time),PHP_EOL,'时长：',trim($time_length),PHP_EOL,'参会密码：',trim($password)?></textarea>
+     <textarea id='meeting-content' style='display:none;'><?php echo '主题：',trim($title),PHP_EOL,'开始时间：',trim($start_time),PHP_EOL,'时长：',trim($time_length),'分钟',PHP_EOL,'参会密码：',trim($password)?></textarea>
