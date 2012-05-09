@@ -176,8 +176,8 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .reserBtn .btnBlue{ margin-right:70px;}
 .reserBox .left{ float:left; width:470px;}
 .reserBox .right{ float:right; width:470px;}
-.reserBox .left .colBox{ padding-left:0px; padding-top:0px; min-height:300px;}
-.reserBox .right .colBox{ padding-left:0px; padding-top:0px; min-height:300px;}
+.reserBox .left .colBox{ padding-left:0px; padding-top:0px; min-height:300px; _height:300px;}
+.reserBox .right .colBox{ padding-left:0px; padding-top:0px; min-height:300px; _height:300px;}
 .userlist{ padding:20px 0px 20px 20px;}
 .userlist span{ width:110px; display:block; float:left; margin-top:5px;}
 .userlist label{ margin-left:10px;}
