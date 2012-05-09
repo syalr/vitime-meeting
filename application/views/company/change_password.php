@@ -35,7 +35,15 @@
                         </div>
                     </div>
                 </li>
-               
+                <li>
+                	<div class="fname"><span class="redStar">*</span><label>确认新密码：</label></div>
+                    <div class="fvalue"><input type="password" name="renewpassword" value='' class="inputStyle"/></div>
+                    <div class="ftip">
+                    	<div class="attTip">
+                        	重新输入新的密码
+                        </div>
+                    </div>
+                </li>
                 <li>
                 	<div class="fname"></div>
                     <div class="fvalue">

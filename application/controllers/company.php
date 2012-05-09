@@ -526,6 +526,11 @@ class Company extends CU_Controller{
 			$errMsg .= $this->wrapErrorMsg("邮箱必须填写");
 		}
 		
+		if(empty($postData['company_name'])){
+			$errMsg .= $this->wrapErrorMsg("企业名称必须填写");
+		}
+
+		
 		if(!empty($errMsg)){
 			$companyUser = $this->_user->toArray();
 			$errMsg = "填写不完整：<br />{$errMsg}";

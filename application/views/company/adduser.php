@@ -1,6 +1,6 @@
 <?php $this->load->view('/company/cmp_admin_nav.php')?>
 <div class="regBox">
-    	<form id="adduserForm" name="adduserForm" class="regForm" method='post' action='/company/do_adduser'>
+    	<form id="adduserForm" name="adduserForm" class="regForm" method='post' action='/company/do_adduser' onsubmit='return validateAddUserForm(this)'>
     	<?php if(!empty($errMsg)):?>
     	<ul>
     		<li>
@@ -17,32 +17,47 @@
                     <div class="ftip"></div>
                 </li>
                 <li>
-                	<div class="fname"><span class="redStar">*</span><label>账号：</label></div>
-                    <div class="fvalue"><input type="text" name='username' value="<?php echo $username?>" class="inputStyle"/></div>
-                    <div class="ftip"></div>
+                	<div class="fname"><span class="redStar">*</span><label>帐号：</label></div>
+                    <div class="fvalue"><input type="text" name="username" class="inputStyle" value='<?php echo $username;?>'/></div>
+                    <div class="ftip" id='username_ftip'>
+                    	<div class="attTip">
+                        	请输入登录帐号
+                        </div>
+                    </div>
                 </li>
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>密码：</label></div>
-                    <div class="fvalue"><input type="password" name="password" value='<?php echo $password?>' class="inputStyle"/></div>
-                    <div class="ftip" style='display:none;'>
-                    	<div class="errorTip">
-                        	<span class="icon icon-error"></span>请输入验证码
+                    <div class="fvalue"><input type="password" name="password" class="inputStyle" /></div>
+                    <div class="ftip" id='password_ftip'>
+                    	<div class="attTip">
+                        	请输入登录密码，长度为6-16个字符
+                        </div>
+                    </div>
+                </li>
+                <li>
+                	<div class="fname"><span class="redStar">*</span><label>确认密码：</label></div>
+                    <div class="fvalue"><input type="password" name="repassword" class="inputStyle" /></div>
+                    <div class="ftip" id='repassword_ftip'>
+                    	<div class="attTip">
+                        	请再次输入登录密码，长度为6-16个字符
                         </div>
                     </div>
                 </li>
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>手机号码：</label></div>
-                    <div class="fvalue"><input type="text" name="mobile" value='<?php echo $mobile?>' class="inputStyle"/></div>
-                    <div class="ftip">
-                    	
+                    <div class="fvalue"><input type="text" name="mobile" class="inputStyle" value='<?php echo $mobile;?>'/></div>
+                    <div class="ftip" id='mobile_ftip'>
+                    	<div class="attTip">
+                        	请输入用户手机号码
+                        </div>
                     </div>
                 </li>
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>邮箱：</label></div>
-                    <div class="fvalue"><input type="text" name="email" value='<?php echo $email?>' class="inputStyle"/></div>
-                    <div class="ftip" style='display:none;'>
+                    <div class="fvalue"><input type="text" name="email" class="inputStyle" value='<?php echo $email;?>'/></div>
+                    <div class="ftip" id='email_ftip'>
                     	<div class="attTip">
-                        	请输入您的常用邮箱,如example@examplae.com
+                        	请输入用户常用邮箱,如example@examplae.com
                         </div>
                     </div>
                 </li>

@@ -81,7 +81,7 @@ class MeetingManage implements IMeetingManage{
 	 */
 	public function listPubMeeting($page = 1,$limit = 10) {
 		$this->CI->load->model('meeting/Meeting_model','MeetingModel');
-		return $this->CI->MeetingModel->getPublicMeetingList($this->getUser()->id,$page,$limit);
+		return $this->CI->MeetingModel->getPublicMeetingList($this->getUser()->id,$this->getUser()->company_id,$page,$limit);
 	}
 
 	/** 

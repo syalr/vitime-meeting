@@ -9,7 +9,6 @@
                 <table width="100%" border="0" class="dataGrid">
                   <thead>
                   	<tr>
-                    	<th class="td0"></th>
                     	<th class="td1">姓名</th>
                         <th class="td2">账号</th>
                         <th class="td3">密码</th>
@@ -21,7 +20,6 @@
                   <?php if(!empty($data)):?>
 	                  <?php foreach($data as $user):?>
 	                  <tr>
-	                    <td class="td0"><input type="checkbox" name='check_user' value='<?php echo $user['id']?>'/></td>
 	                    <td class="td1"><?php echo stripslashes($user['name'])?></td>
 	                    <td class="td1"><?php echo stripslashes($user['username'])?></td>
 	                    <td class="td3">******</td>

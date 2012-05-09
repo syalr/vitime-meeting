@@ -330,8 +330,10 @@ class CmpAdminManage{
 		$company_id = $this->getUser()->company_id;
 		$mobile = $postData['mobile'];
 		$email = $postData['email'];
+		$company_name = $postData['company_name'];
 		
 		//加载数据库访问模型
+		$this->CI->load->model('company/Company_model','CompanyModel');
 		$this->CI->load->model('company/Company_user_model','CompanyUserModel');
 		
 		//判断是否存在该用户
@@ -339,6 +341,21 @@ class CmpAdminManage{
 		if(empty($cmpUser)){
 			return "参数错误";
 		}
+		
+		$company = $this->CI->CompanyModel->get($company_id);
+		
+		//开启事务
+		$this->CI->db->trans_begin();
+		if($company['company_name'] != $company_name){
+			$company = array('company_name'=>$company_name);
+			$where = array('id'=>$company_id);
+			$rs = $this->CI->CompanyModel->update($company,$where);
+			if($rs != 1){
+				$this->CI->db->trans_rollback();
+				return "更新企业资料失败";
+			}
+		}
+
 		
 		//存储结果
 		$rs = 1;
@@ -364,9 +381,11 @@ class CmpAdminManage{
 			if($rs == 1){
 				return true;
 			}else{
+				$this->CI->db->trans_rollback();
 				return "更新员工资料失败";
 			}
 		}
+		$this->CI->db->trans_commit();
 		return $rs === 1;
 	}
 	

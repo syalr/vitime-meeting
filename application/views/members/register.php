@@ -116,7 +116,7 @@
                 </li>
                 <li>
                 	<div class="fname"></div>
-                    <div class="fvalue"><input type="submit" class="btn btnBlue" value='注 册'></input><button type="reset" class="btn btnBlue" onclick='window.history.back()'>取消</button></div>
+                    <div class="fvalue"><input type="submit" class="btn btnBlue" value='注 册'></input><button type="reset" class="btn btnBlue" onclick='window.location.href="/members"'>取消</button></div>
                     <div class="ftip"></div>
                 </li>
             </ul>

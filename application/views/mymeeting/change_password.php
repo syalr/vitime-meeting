@@ -1,6 +1,6 @@
 <?php $this->load->view('/mymeeting/cmp_user_nav.php')?>
 <div class="regBox">
-    	<form id="updateuserForm" name="updateuserForm" class="regForm" method='post' action='/mymeeting/do_change_password'>
+    	<form id="updateuserForm" name="updateuserForm" class="regForm" method='post' action='/mymeeting/do_change_password' onsubmit='return validateCPWDForm(this)'>
     	<input type='hidden' name='user_id' value='<?php echo $id ?>' />
     	<?php if(!empty($errMsg)):?>
     	<ul>
@@ -37,6 +37,16 @@
                     <div class="ftip">
                     	<div class="attTip">
                         	填写新的密码
+                        </div>
+                    </div>
+                </li>
+                
+                 <li>
+                	<div class="fname"><span class="redStar">*</span><label>确认新密码：</label></div>
+                    <div class="fvalue"><input type="password" name="renewpassword" value='' class="inputStyle"/></div>
+                    <div class="ftip">
+                    	<div class="attTip">
+                        	重新输入新的密码
                         </div>
                     </div>
                 </li>

@@ -27,6 +27,10 @@ class Meeting extends CU_Controller{
 			show_404();
 		}
 		
+		if(strtotime($meeting['end_time']) < time()){
+			$this->_showError('该会议已经过期',array('url'=>'javascript:window.history.back();','label'=>'返回'));
+		}
+		
 		if($_SESSION['view-meeting-'.$meet_id] == $meet_id){
 			return $this->view($meeting);
 		}

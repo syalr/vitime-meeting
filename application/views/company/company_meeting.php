@@ -27,7 +27,7 @@
                     <?php if(strtotime($meeting['end_time']) > time()):?>
                     	<button type="button" class="btn btnBlueSm mg-r10" onclick='enter_meeting(<?php echo $meeting['id']?>)'>进入</button>
                     <?php endif;?>
-                    <?php if($meeting['state'] == 1):?>
+                    <?php if(!empty($meeting['state']) && $meeting['state'] == 1):?>
                     	<button type="button" class="btn btnBlueSm mg-r10" onclick = 'edit_company_meeting(<?php echo $meeting['id']?>)'>编辑</button>
                         <button type="button" class="btn btnBlueSm" onclick='delete_company_meeting(<?php echo $meeting['id']?>)'>删除</button>
                     <?php endif;?>

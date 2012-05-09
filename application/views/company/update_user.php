@@ -1,6 +1,6 @@
 <?php $this->load->view('/company/cmp_admin_nav.php')?>
 <div class="regBox">
-    	<form id="updateuserForm" name="updateuserForm" class="regForm" method='post' action='/company/update_user'>
+    	<form id="updateuserForm" name="updateuserForm" class="regForm" method='post' action='/company/update_user' onsubmit='return validateUpUserForm(this)'>
     	<input type='hidden' name='user_id' value='<?php echo $id ?>' />
     	<?php if(!empty($errMsg)):?>
     	<ul>
@@ -25,6 +25,15 @@
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>密码：</label></div>
                     <div class="fvalue"><input type="password" name="password" value='' class="inputStyle"/></div>
+                    <div class="ftip">
+                    	<div class="attTip">
+                        	密码如果不修改，请留空！！
+                        </div>
+                    </div>
+                </li>
+                <li>
+                	<div class="fname"><span class="redStar">*</span><label>确认密码：</label></div>
+                    <div class="fvalue"><input type="password" name="repassword" value='' class="inputStyle"/></div>
                     <div class="ftip">
                     	<div class="attTip">
                         	密码如果不修改，请留空！！

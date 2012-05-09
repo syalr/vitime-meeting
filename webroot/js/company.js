@@ -37,11 +37,11 @@ jQuery(function(){
 		$('#start_time').datepicker();
 	}
 	$('#left_user_list input:checkbox').live('click',function(){
-    	$('#right_user_list').append($(this).parent().remove());
+    	$('#right_user_list').append($(this).attr('checked',true).parent().remove());
     });
 
 	$('#right_user_list input:checkbox').live('click',function(){
-    	$('#left_user_list').append($(this).parent().remove());
+    	$('#left_user_list').append($(this).attr('checked',false).parent().remove());
     });
 });
 
@@ -124,10 +124,10 @@ function do_open_meeting(form){
 	
 	var user_list = [];
 	$('#right_user_list input:checked').each(function(){
-		user_list.push(this.id);
+		user_list.push(this.value);
 	});
 	
-	form.user_list = user_list.join(',');
+	form.user_list.value = user_list.join(',');
 	form.submit();
 }
 
@@ -189,4 +189,76 @@ function do_edit_meeting(form){
 	
 	form.user_list.value = user_list.join(',');
 	form.submit();
+}
+
+function validateCPWDForm(form){
+	if(form.password.value == ''){
+		alert('原密码不能为空');
+		return false;
+	}
+	if(form.newpassword.value== ''){
+		alert('新密码不能为空');
+		return false;
+	}
+	
+	if(form.newpassword.value != form.renewpassword.value){
+		alert('两次密码输入不一致，请重新输入');
+		return false;
+	}
+	return true;
+}
+
+function validateUpUserForm(form){
+	if(form.password.value != ''){
+		if(form.repassword.value!= form.password.value){
+			alert('两次密码输入不一致，请重新输入');
+			return false;
+		}
+	}
+	
+	
+	return true;
+}
+
+function validateAddUserForm(form){
+	if($.trim(form.username.value) == ""){
+		alert('请输入用户名');
+		$('#username_ftip').show().find('.attTip').addClass('errorTip');
+		return false;
+	}else{
+		$('#username_ftip .attTip').removeClass('errorTip');
+	}
+	
+	if($.trim(form.password.value) == ""){
+		alert('请输入密码');
+		$('#password_ftip').show().find('.attTip').addClass('errorTip');
+		return false;
+	}else{
+		$('#password_ftip .attTip').removeClass('errorTip');
+	}
+	
+	if(form.password.value != form.repassword.value){
+		alert('两次密码输入不一致，请重新输入');
+		$('#repassword_ftip').show().find('.attTip').addClass('errorTip');
+		return false;
+	}else{
+		$('#repassword_ftip .attTip').removeClass('errorTip');
+	}
+	
+	if(form.mobile.value==''){
+		alert('请输入手机号码');
+		$('#mobile_ftip').show().find('.attTip').addClass('errorTip');
+		return false;
+	}else{
+		$('#mobile_ftip .attTip').removeClass('errorTip');
+	}
+	
+	if(form.email.value==''){
+		alert('请输入邮箱地址');
+		$('#email_ftip').show().find('.attTip').addClass('errorTip');
+		return false;
+	}else{
+		$('#email_ftip .attTip').removeClass('errorTip');
+	}
+	return true;
 }

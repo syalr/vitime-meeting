@@ -42,6 +42,19 @@
                         </div>
                     </div>
                 </li>
+                 <li>
+                	<div class="fname"><span class="redStar">*</span><label>公司名称：</label></div>
+                    <div class="fvalue"><input type="text" name="company_name" class="inputStyle" value='<?php echo $company['company_name'];?>'/></div>
+                </li>
+                <li>
+                	<div class="fname"><label>企业标识：</label></div>
+                    <div class="fvalue"><input type="text" name="company_mark" class="inputStyle" value='<?php echo $company['company_mark'];?>' readonly="readonly" style='color:gray;'/></div>
+                     <div class="ftip">
+                    	<div class="attTip">
+                        	企业标识不能修改
+                        </div>
+                    </div>
+                </li>
                 <li>
                 	<div class="fname"></div>
                     <div class="fvalue">
