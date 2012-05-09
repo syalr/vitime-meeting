@@ -50,13 +50,10 @@ class Meeting_model extends CU_Model{
 	 * @param int $page
 	 * @param int $limit
 	 */
-	public function getPublicMeetingList($user_id=0,$company_id=0,$page = 1,$limit = 10){
+	public function getPublicMeetingList($user_id=0,$page = 1,$limit = 10){
 		$page = max(intval($page),1);
 		$offset = ($page - 1)*$limit;
 		$where = array('type'=>0);
-		if(!empty($company_id)){
-			$where['company_id'] = $company_id; 
-		}
 		if(!empty($user_id)){
 			$order = "(user_id={$user_id}) desc,";
 		}
