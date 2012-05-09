@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="regBox">
-    	<form name="registerForm" id='registerForm' class="regForm" action='/members/do_register' method='post' onsubmit="return validForm(this)">
+    	<form name="registerForm" id='registerForm' class="regForm" action='/members/do_register' method='post' onsubmit="return validRegForm(this)">
     	<?php if(!empty($errMsg)):?>
     	<ul>
     		<li>
@@ -32,7 +32,7 @@
             	<li>
                 	<div class="fname"><span class="redStar">*</span><label>用户名：</label></div>
                     <div class="fvalue"><input type="text" name="username" class="inputStyle" value='<?php echo $username;?>'/></div>
-                    <div class="ftip">
+                    <div class="ftip" id='username_ftip'>
                     	<div class="attTip">
                         	请输入您的用户名
                         </div>
@@ -41,16 +41,25 @@
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>密码：</label></div>
                     <div class="fvalue"><input type="password" name="password" class="inputStyle" /></div>
-                    <div class="ftip">
+                    <div class="ftip" id='password_ftip'>
                     	<div class="attTip">
                         	请输入您的密码，长度为6-16个字符
                         </div>
                     </div>
                 </li>
                 <li>
+                	<div class="fname"><span class="redStar">*</span><label>确认密码：</label></div>
+                    <div class="fvalue"><input type="password" name="repassword" class="inputStyle" /></div>
+                    <div class="ftip" id='repassword_ftip'>
+                    	<div class="attTip">
+                        	请再次输入您的密码，长度为6-16个字符
+                        </div>
+                    </div>
+                </li>
+                <li>
                 	<div class="fname"><span class="redStar">*</span><label>手机号码：</label></div>
                     <div class="fvalue"><input type="text" name="mobile" class="inputStyle" value='<?php echo $mobile;?>'/></div>
-                    <div class="ftip">
+                    <div class="ftip" id='mobile_ftip'>
                     	<div class="attTip">
                         	请输入您的手机号码
                         </div>
@@ -59,7 +68,7 @@
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>邮箱：</label></div>
                     <div class="fvalue"><input type="text" name="email" class="inputStyle" value='<?php echo $email;?>'/></div>
-                    <div class="ftip">
+                    <div class="ftip" id='email_ftip'>
                     	<div class="attTip">
                         	请输入您的常用邮箱,如example@examplae.com
                         </div>
@@ -68,12 +77,20 @@
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>公司名称：</label></div>
                     <div class="fvalue"><input type="text" name="company_name" class="inputStyle" value='<?php echo $company_name;?>'/></div>
-                    <div class="ftip"></div>
+                    <div class="ftip" id='company_name_ftip'>
+                    	<div class="attTip">
+                        	请输入企业名称
+                        </div>
+                    </div>
                 </li>
                 <li>
                 	<div class="fname"><span class="redStar">*</span><label>企业标识：</label></div>
                     <div class="fvalue"><input type="text" name="company_mark" class="inputStyle" value='<?php echo $company_mark;?>'/></div>
-                    <div class="ftip"></div>
+                     <div class="ftip" id='company_mark_ftip'>
+                    	<div class="attTip">
+                        	请输入企业标识
+                        </div>
+                    </div>
                 </li>
                 <li class="yzm">
                 	<div class="fname"><span class="redStar">*</span><label>验证码：</label></div>
@@ -86,7 +103,7 @@
                           </tr>
                         </table>
                     </div>
-                    <div class="ftip">
+                    <div class="ftip vhide" id='verifycode_ftip'>
                     	<div class="errorTip">
                         	<span class="icon icon-error"></span>请输入验证码
                         </div>
@@ -99,7 +116,7 @@
                 </li>
                 <li>
                 	<div class="fname"></div>
-                    <div class="fvalue"><button type="submit" class="btn btnBlue">注 册</button><button type="reset" class="btn btnBlue" onclick='window.history.back()'>取消</button></div>
+                    <div class="fvalue"><input type="submit" class="btn btnBlue" value='注 册'></input><button type="reset" class="btn btnBlue" onclick='window.history.back()'>取消</button></div>
                     <div class="ftip"></div>
                 </li>
             </ul>
