@@ -53,18 +53,20 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .icon-rf{ background:url(../images/icon_rf.png) no-repeat; height:16px; width:16px;}
 .icon-ok{ background:url(../images/icon_ok.png) no-repeat; height:21px; width:23px;}
 .icon-att{ background:url(../images/info_48.png) no-repeat; height:48px; width:48px;}
-.icon-att-error{ background:url(../images/Block 48x48.png) no-repeat; height:48px; width:48px;}
 .inputStyle{ background:url(../images/input_bg.png) no-repeat; height:37px; border:0px solid #f5f5f5; width:367px; padding-left:10px; line-height:37px; font-size:16px;}
 .btnBlue{ background:url(../images/button_blue.png) no-repeat; width:153px; height:43px; _height:44px; color:#fff; font-weight:bold; font-size:18px;}
 .btnRed{ background:url(../images/button_red.png) no-repeat; width:153px; height:43px; _height:44px; color:#fff; font-weight:bold; font-size:18px;}
 .btnBlueSm{ background:url(../images/Button_small.png) no-repeat; width:56px; height:22px; _height:23px; color:#fff; font-size:14px;}
 .btnGraySm{ background:url(../images/Button_small_un.png) no-repeat; width:56px; height:22px; _height:23px; color:#fff; font-size:14px; cursor:not-allowed;}
+.btnBlueBig{ background:url(../images/big_btn_blue.png) no-repeat; width:367px; height:42px; _height:43px; color:#fff; font-size:14px;}
+.btnGreenBig{ background:url(../images/big_btn_green.png) no-repeat; width:367px; height:42px; _height:43px; color:#fff; font-size:14px;}
 .inputsm{ background:url(../images/input_bg_sm1.png) no-repeat; height:37px; border:0px solid #f5f5f5; width:125px; padding-left:10px; line-height:37px; font-size:16px;}
 .redStar{ color:#ff0000; font-family:'宋体'; font-size:16px; margin-right:3px;}
 .sysTipOk{ height:43px; background-color:#d4f684; border:1px solid #add539; text-align:center; font-size:20px; color:#202020; line-height:43px; font-weight:bold;}
-.userBox{ position:absolute; width:250px; right:10px; top:27px;}
+.userBox{ position:absolute; right:10px; top:27px;}
 .userInfo{ color:#aaa; font-size:12px; padding-bottom:10px;}
-.userBtn{}
+.userInfo a{ margin-right:10px;}
+.userBtn{ float:right; height:27px;}
 .userBtn a{ color:#333; line-height:22px; text-decoration:none; padding-left:25px; margin-right:10px;}
 .userBtn .btnAc{ background:url(../images/Button_Account.png) no-repeat; width:31px; height:22px;}
 .userBtn .btnAc:hover{ background:url(../images/Button_Account_hover.png) no-repeat;}
@@ -73,21 +75,40 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .userBtn .btnExit{ background:url(../images/Button_Logout.png) no-repeat; width:31px; height:22px; margin-right:0px;}
 .userBtn .btnExit:hover{ background:url(../images/Button_Logout_hover.png) no-repeat;}
 .col{}
-.col h3{ position:relative; font-size:18px; font-weight:normal; margin-bottom:0px; background-color:#292929; height:35px; line-height:35px; padding-left:10px; color:#fff; border:1px solid #292929;}
+.col h3{ position:relative; font-size:18px; font-weight:normal; margin-bottom:0px; background-color:#292929; height:35px; line-height:35px; padding-left:10px; color:#fff; border:1px solid #292929; margin-top:0px;}
 .col .search{ position:absolute; right:10px; top:0px;}
 .col .search .searchData{ width:157px; height:18px; line-height:22px; font-size:12px; border:0px solid #f5f5f5; padding-left:3px; background:url(../images/search.png) no-repeat;}
 .col .search .btnSearch{ background:url(../images/search.png) -165px 0px; width:18px; height:17px;}
 .col .colBox{ border:1px solid #c4c4c4; border-top:0px solid #c4c4c4;}
-.nav{background:url(../images/nav_bg.png) repeat-x; height:43px;}
+.nav{background:url(../images/nav_bg.png) repeat-x; height:43px; margin-bottom:10px;}
 .nav ul{}
 .nav ul li{ float:left; width:173px; height:43px; display:block; line-height:43px; color:#f5f5f5; font-size:18px; text-align:center; background:url(../images/nav_fgx.png) right no-repeat;}
 .nav ul li a{ width:173px; height:43px; display:block; line-height:43px; color:#f5f5f5; text-decoration:none;}
 .nav ul li a.selected{ background:url(../images/nav_a_selected.png) bottom no-repeat;}
+.ft{ text-align:center; width:1002px; margin:0 auto; font-size:16px; color:#222; padding:20px 0px;}
+/* -----------首页---------- */
+.slideBox{ height:322px; margin:0 auto;}
+.slide{ float:left; display:block;}
+.tab{ position:relative; width:1002px; margin:0 auto;}
+.tab ul{ height:11px;}
+.tab li{ width:11px; height:11px; margin-right:10px; display:block; float:left; background:url(../images/sl_selected.png) no-repeat; position:relative;}
+.tab li a{ width:11px; height:11px; text-decoration:none; display:block;}
+.tab li a:hover{ text-decoration:none;}
+.tab li.selected{ background:url(../images/sl_no.png) no-repeat;}
+.tab li.last{ margin-right:0px;}
+.tab .tabTip{ color:#fff; font-size:12px; background:#ff7400; width:65px; padding-left:5px; height:30px; line-height:30px; position:absolute; top:1px; right:1px;}
+.tab0,.tab1,.tab2{ height:322px;overflow:hidden;}
+.tab0{ background:url(../images/tab_bg.jpg) repeat-x;}
+.tab1{ background:url(../images/tab_bg.jpg) repeat-x;}
+.tab2{ background:url(../images/tab_bg.jpg) repeat-x;}
+.tab ul{ position:absolute; top:-25px;right:50%; }
+.tabSidesBox{ width:1144px; margin:0 auto; overflow:hidden;}
 /* -----------登录---------- */
 .loginTop{ background-color:#202020; height:500px;}
 .loginTop .logo{ width:450px; margin:0 auto; padding-top:390px; position:relative;}
 .loginTop .logoTxt{ position:absolute; bottom:15px; font-size:30px; font-weight:bold; color:#fff; left:75px;}
 .loginBox{ background-color:#f5f5f5;}
+.loginBox .btnBlue{ margin-right:25px;}
 .loginForm{ width:450px; margin:0 auto; padding-top:50px;}
 .loginForm li{ padding-bottom:10px;}
 .loginForm label{ color:#666; display:block; padding-bottom:5px; font-size:12px;}
@@ -115,7 +136,7 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .regBox .fvalue{ width:380px;}
 .regBox .ftip{ width:170px;}
 .regBox .attTip{ background-color:#fffde3; border:1px solid #b6b6b6; color:#666; line-height:16px; padding:3px;}
-.errorTip{ background-color:#ffdcdc; border:1px solid #f9a9a9; color:#dc0000; line-height:16px; padding:3px;}
+.regBox .errorTip{ background-color:#ffdcdc; border:1px solid #f9a9a9; color:#dc0000; line-height:16px; padding:3px;}
 .regBox .sAccount{ position:relative; color:#666; line-height:17px; font-size:18px; height:100px;}
 .sAccount .pos1{ position:absolute; left:150px; top:40px; }
 .sAccount .pos2{ position:absolute; left:270px; top:40px; }
@@ -125,7 +146,7 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .regBox .yzm table td{ vertical-align:top;}
 .regBox .yzm a{ color:#3d8abc; text-decoration:underline; font-size:12px;}
 .regBox a{ color:#3d8abc; text-decoration:underline; font-size:14px;}
-.regBox .btnBlue{ font-size:16px; text-align:center;}
+.regBox .btnBlue{ font-size:16px; text-align:center; margin-right:25px;}
 .regSuccess{ width:830px; min-height:140px; margin:0 auto; padding-top:50px;}
 .regSuccessTip{ border:1px solid #89abea; background-color:#c3e4fd; font-size:24px; padding:40px 0px; position:relative;}
 .regSuccess .regBtn{ text-align:center; padding-top:90px;}
@@ -145,9 +166,9 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .reserBox div{ display:block; padding-bottom:5px; font-size:16px; color:#333;}
 .reserBox span.stip{ font-size:12px;  color:#666;}
 .reserBox .year{ width:100px; margin-right:10px;}
-.reserBox .month{ width:50px; margin-right:10px;}
-.reserBox .day{ width:50px;}
-.reserBox .time{ width:60px;}
+.reserBox .month{ width:100px; margin-right:10px;}
+.reserBox .day{ width:100px;}
+.reserBox .time{ width:120px;}
 .reserBtn{ text-align:center; padding-top:50px; padding-bottom:20px;}
 .reserBtn .btnBlue{ margin-right:70px;}
 .reserBox .left{ float:left; width:470px;}
@@ -168,7 +189,6 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .dataGrid .td3{}
 .dataGrid .td4{}
 .dataGrid .td5{}
-.dataGrid .selected-tr{background-color:#CCFFFF}
 .pageBox{ padding:0px 20px;}
 .page{ border:1px solid #ddd; height:25px; line-height:28px; width:470px; padding-left:10px;}
 .page span{ width:25px; height:25px; display:block; float:left; text-align:center; cursor:pointer;}
@@ -178,4 +198,3 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .page .more{ width:70px;}
 .page .last{ border-left:1px solid #ddd;}
 .page .last input{border:1px solid #ccc; width:50px; margin-left:10px; height:12px;}
-
