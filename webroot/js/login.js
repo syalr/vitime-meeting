@@ -76,6 +76,11 @@ function validRegForm(form){
 	}else{
 		$('#verifycode_ftip').hide();
 	}
+	
+	if(!form.view_agreement.checked){
+		alert('请先阅读《企业移动视频会议协议》');
+		return false;
+	}
 	return true;
 }
 
@@ -84,5 +89,5 @@ function validForm(form){
 }
 
 function changeVerify(){
-	$('#verifyCode').src = '/captcha.php?'+new Date().getTime();
+	$('#verifyCode').attr('src','/captcha.php?'+new Date().getTime());
 }

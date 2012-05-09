@@ -111,7 +111,7 @@
                 </li>
                 <li>
                 	<div class="fname"></div>
-                    <div class="fvalue" style="line-height:17px;"><span class="icon icon-checked"></span><a href="#">我已阅读并介绍《企业移动视频会议协议》</a></div>
+                    <div class="fvalue" style="line-height:17px;"><input type='checkbox' name='view_agreement' checked="checked" /><a href="/user_agreement.html" target='_blank'>&nbsp;我已阅读并介绍《企业移动视频会议协议》</a></div>
                     <div class="ftip"></div>
                 </li>
                 <li>
