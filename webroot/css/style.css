@@ -198,3 +198,6 @@ html body span.clearfix{ float: none; clear:both; width: 0; height:0; margin: 0;
 .page .more{ width:70px;}
 .page .last{ border-left:1px solid #ddd;}
 .page .last input{border:1px solid #ccc; width:50px; margin-left:10px; height:12px;}
+
+/*用户协议*/
+.userAgreenment{}
