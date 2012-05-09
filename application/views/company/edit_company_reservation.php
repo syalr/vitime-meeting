@@ -53,7 +53,6 @@
                 <?php foreach($all_user_list as $user):?>
                 	<span><input type="checkbox" id='ck-<?php echo $user['id']?>' value='<?php echo $user['id']?>'/><label><?php echo (!empty($user['name'])?$user['name']:$user['username']);?></label></span>
                 <?php endforeach;?>    
-                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
@@ -63,8 +62,7 @@
                 <div class="userlist" id='right_user_list'>
                 <?php foreach($user_list as $auser):?>
                 	<span><input type="checkbox" id='sck-<?php echo $auser['id']?>' value='<?php echo $auser['id']?>' checked/><label><?php echo (!empty($auser['name'])?$auser['name']:$auser['username']);?></label></span>
-                <?php endforeach;?>    
-                    <div class="clearfix"></div>
+                <?php endforeach;?>   
                 </div>
             </div>
         </div>

@@ -1,7 +1,10 @@
 <!doctype html>
 <html>
 <head> 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
+	<meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
     <meta name="description" content=""> 
     <meta name="keywords" content=""> 
     <title>微泰移动视频会议系统-<?php echo $title?></title>  
