@@ -99,7 +99,7 @@
                           <tr>
                             <td><input type="text" name="verifycode" class="inputsm" /></td>
                             <td><img src="/captcha.php" alt="看不清？换一换" id='verifyCode' onclick='changeVerify()'/></td>
-                            <td><span class="icon icon-rf"></span><a href="javascript:void();" onclick='changeVerify()'>看不清？换一换</a></td>
+                            <td><span class="icon icon-rf"></span><a href="javascript:void(0);" onclick='changeVerify()'>看不清？换一换</a></td>
                           </tr>
                         </table>
                     </div>
