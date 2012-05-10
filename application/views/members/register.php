@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="regBox">
-    	<form name="registerForm" id='registerForm' class="regForm" action='/members/do_register' method='post' onsubmit="return validRegForm(this)">
+    	<form name="registerForm" id='registerForm' class="regForm" action='/members/do_register' method='post' onSubmit="return validRegForm(this)">
     	<?php if(!empty($errMsg)):?>
     	<ul>
     		<li>
@@ -116,7 +116,7 @@
                 </li>
                 <li>
                 	<div class="fname"></div>
-                    <div class="fvalue"><input type="submit" class="btn btnBlue" value='注 册'></input><button type="reset" class="btn btnBlue" onclick='window.location.href="/members"'>取消</button></div>
+                    <div class="fvalue"><input type="submit" class="btn btnBlue" value='注 册'></input><button type="reset" class="btn btnBlue" onclick='window.location.href="/"'>取消</button></div>
                     <div class="ftip"></div>
                 </li>
             </ul>
