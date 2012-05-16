@@ -67,6 +67,10 @@ class CmpAdminManage{
 			return "用户不存在";
 		}
 		
+		if(empty($user['status']) ||$user['status'] < 1){
+			return "您的帐号已经被删除或锁定，不允许登录";
+		}
+		
 		if(make_password($username, $password) != $user['password']){
 			return "用户名或密码不对";
 		}
