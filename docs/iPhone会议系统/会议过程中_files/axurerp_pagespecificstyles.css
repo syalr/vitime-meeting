@@ -1,0 +1,1940 @@
+body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+div.main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_original {
+    background-image: url('../机子_files/u0_original.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:851px;
+    height:480px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:232px;
+    width:847px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u0 {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px
+}
+
+.u3_original {
+    background-image: url('../视频会议中_files/u3_original.png');
+}
+
+.u3_container {
+    position:absolute;
+    left:135px;
+    top:350px;
+    width:480px;
+    height:25px;
+}
+
+#u3_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:25px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3 {
+    position:absolute;
+    left:135px;
+    top:350px;
+    width:480px;
+    height:25px
+}
+
+.u5_original {
+    background-image: url('../视频会议中_files/u5_original.png');
+}
+
+.u5_container {
+    position:absolute;
+    left:134px;
+    top:70px;
+    width:480px;
+    height:35px;
+}
+
+#u5_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:35px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:134px;
+    top:70px;
+    width:480px;
+    height:35px
+}
+
+.u7_original {
+    background-image: url('../视频会议中_files/u7_original.png');
+}
+
+.u7_container {
+    position:absolute;
+    left:145px;
+    top:70px;
+    width:230px;
+    height:35px;
+}
+
+#u7_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:230px;
+    height:35px;
+}
+
+.u8 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:226px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:145px;
+    top:70px;
+    width:230px;
+    height:35px
+}
+
+.u9 {
+    position:absolute;
+    left:141px;
+    top:80px;
+    width:180px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10_original {
+    background-image: url('../视频会议中_files/u10_original.png');
+}
+
+.u10_container {
+    position:absolute;
+    left:364px;
+    top:79px;
+    width:16px;
+    height:15px;
+}
+
+#u10_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:16px;
+    height:15px;
+}
+
+.u11 {
+    position:absolute;
+    left:2px;
+    top:0px;
+    width:12px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:364px;
+    top:79px;
+    width:16px;
+    height:15px
+}
+
+.u12_original {
+    background-image: url('../视频会议中_files/u12_original.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:432px;
+    top:78px;
+    width:18px;
+    height:18px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:18px;
+    height:18px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:1px;
+    width:14px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12 {
+    position:absolute;
+    left:432px;
+    top:78px;
+    width:18px;
+    height:18px
+}
+
+.u14_original {
+    background-image: url('../视频会议中_files/u14_original.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:502px;
+    top:79px;
+    width:16px;
+    height:16px;
+}
+
+#u14_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:16px;
+    height:16px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:0px;
+    width:12px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14 {
+    position:absolute;
+    left:502px;
+    top:79px;
+    width:16px;
+    height:16px
+}
+
+.u16_original {
+    background-image: url('../视频会议中_files/u16_original.png');
+}
+
+.u16_container {
+    position:absolute;
+    left:571px;
+    top:79px;
+    width:16px;
+    height:16px;
+}
+
+#u16_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:16px;
+    height:16px;
+}
+
+.u17 {
+    position:absolute;
+    left:2px;
+    top:0px;
+    width:12px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16 {
+    position:absolute;
+    left:571px;
+    top:79px;
+    width:16px;
+    height:16px
+}
+
+.u18_text {
+    position:absolute;
+    left:338px;
+    top:80px;
+    width:31px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u18 {
+    position:absolute;
+    left:338px;
+    top:80px;
+    width:31px;
+    height:14px
+}
+
+.u19_text {
+    position:absolute;
+    left:382px;
+    top:80px;
+    width:62px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19 {
+    position:absolute;
+    left:382px;
+    top:80px;
+    width:62px;
+    height:14px
+}
+
+.u20_text {
+    position:absolute;
+    left:452px;
+    top:80px;
+    width:60px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20 {
+    position:absolute;
+    left:452px;
+    top:80px;
+    width:60px;
+    height:14px
+}
+
+.u21_original {
+    background-image: url('../视频会议中_files/u21_original.png');
+}
+
+.u21_container {
+    position:absolute;
+    left:318px;
+    top:77px;
+    width:19px;
+    height:19px;
+}
+
+#u21_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:19px;
+    height:19px;
+}
+
+.u22 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:15px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u21 {
+    position:absolute;
+    left:318px;
+    top:77px;
+    width:19px;
+    height:19px
+}
+
+.u23 {
+    position:absolute;
+    left:520px;
+    top:80px;
+    width:60px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24_text {
+    position:absolute;
+    left:588px;
+    top:80px;
+    width:31px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24 {
+    position:absolute;
+    left:588px;
+    top:80px;
+    width:31px;
+    height:14px
+}
+
+.u25_original {
+    background-image: url('../视频会议中_files/u25_original.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:135px;
+    top:130px;
+    width:100px;
+    height:220px;
+}
+
+#u25_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:220px;
+}
+
+.u26 {
+    position:absolute;
+    left:2px;
+    top:102px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25 {
+    position:absolute;
+    left:135px;
+    top:130px;
+    width:100px;
+    height:220px
+}
+
+.u27_original {
+    background-image: url('../视频会议中_files/u27_original.png');
+}
+
+.u27_container {
+    position:absolute;
+    left:234px;
+    top:130px;
+    width:141px;
+    height:110px;
+}
+
+#u27_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+.u28 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:137px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27 {
+    position:absolute;
+    left:234px;
+    top:130px;
+    width:141px;
+    height:110px
+}
+
+.u29_original {
+    background-image: url('../视频会议中_files/u29_original.png');
+}
+
+.u29_container {
+    position:absolute;
+    left:135px;
+    top:105px;
+    width:480px;
+    height:25px;
+}
+
+#u29_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:25px;
+}
+
+.u30 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29 {
+    position:absolute;
+    left:135px;
+    top:105px;
+    width:480px;
+    height:25px
+}
+
+.u31_original {
+    background-image: url('../视频会议中_files/u31_original.png');
+}
+
+.u31_container {
+    position:absolute;
+    left:374px;
+    top:130px;
+    width:141px;
+    height:110px;
+}
+
+#u31_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+.u32 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:137px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31 {
+    position:absolute;
+    left:374px;
+    top:130px;
+    width:141px;
+    height:110px
+}
+
+.u33_original {
+    background-image: url('../视频会议中_files/u33_original.png');
+}
+
+.u33_container {
+    position:absolute;
+    left:515px;
+    top:130px;
+    width:100px;
+    height:220px;
+}
+
+#u33_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:220px;
+}
+
+.u34 {
+    position:absolute;
+    left:2px;
+    top:102px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33 {
+    position:absolute;
+    left:515px;
+    top:130px;
+    width:100px;
+    height:220px
+}
+
+.u35_original {
+    background-image: url('../视频会议中_files/u27_original.png');
+}
+
+.u35_container {
+    position:absolute;
+    left:234px;
+    top:240px;
+    width:141px;
+    height:110px;
+}
+
+#u35_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:137px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35 {
+    position:absolute;
+    left:234px;
+    top:240px;
+    width:141px;
+    height:110px
+}
+
+.u37_original {
+    background-image: url('../视频会议中_files/u31_original.png');
+}
+
+.u37_container {
+    position:absolute;
+    left:374px;
+    top:240px;
+    width:141px;
+    height:110px;
+}
+
+#u37_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+.u38 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:137px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37 {
+    position:absolute;
+    left:374px;
+    top:240px;
+    width:141px;
+    height:110px
+}
+
+.u39_original {
+    background-image: url('../视频会议中_files/u39_original.png');
+}
+
+.u39_container {
+    position:absolute;
+    left:374px;
+    top:313px;
+    width:50px;
+    height:40px;
+}
+
+#u39_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:40px;
+}
+
+.u40 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39 {
+    position:absolute;
+    left:374px;
+    top:313px;
+    width:50px;
+    height:40px
+}
+
+.u41_original {
+    background-image: url('../视频会议中_files/u41_original.png');
+}
+
+.u41_container {
+    position:absolute;
+    left:135px;
+    top:50px;
+    width:480px;
+    height:20px;
+}
+
+#u41_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:20px;
+}
+
+.u42 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u41 {
+    position:absolute;
+    left:135px;
+    top:50px;
+    width:480px;
+    height:20px
+}
+
+.u43 {
+    position:absolute;
+    left:300px;
+    top:355px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u45_original {
+    background-image: url('../视频会议中_files/u45_original.png');
+}
+
+.u45_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:195px;
+    height:220px;
+}
+
+#u45_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:201px;
+    height:226px;
+}
+
+.u46 {
+    position:absolute;
+    left:2px;
+    top:102px;
+    width:191px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u45 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:195px;
+    height:220px
+}
+
+.u47_original {
+    background-image: url('../视频会议中_files/u47_original.png');
+}
+
+.u47_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:85px;
+    height:32px;
+}
+
+#u47_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:85px;
+    height:32px;
+}
+
+.u48 {
+    position:absolute;
+    left:2px;
+    top:9px;
+    width:81px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u47 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:85px;
+    height:32px
+}
+
+.u49_original {
+    background-image: url('../视频会议中_files/u49_original.png');
+}
+
+.u49_container {
+    position:absolute;
+    left:89px;
+    top:0px;
+    width:96px;
+    height:32px;
+}
+
+#u49_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:96px;
+    height:32px;
+}
+
+.u50 {
+    position:absolute;
+    left:2px;
+    top:9px;
+    width:92px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u49 {
+    position:absolute;
+    left:89px;
+    top:0px;
+    width:96px;
+    height:32px
+}
+
+.u51_original {
+    background-image: url('../视频会议中_files/u51_original.png');
+}
+
+.u51_container {
+    position:absolute;
+    left:0px;
+    top:30px;
+    width:195px;
+    height:30px;
+}
+
+#u51_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:201px;
+    height:36px;
+}
+
+.u52 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:191px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u51 {
+    position:absolute;
+    left:0px;
+    top:30px;
+    width:195px;
+    height:30px
+}
+
+.u53_original {
+    background-image: url('../视频会议中_files/u51_original.png');
+}
+
+.u53_container {
+    position:absolute;
+    left:0px;
+    top:60px;
+    width:195px;
+    height:30px;
+}
+
+#u53_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:201px;
+    height:36px;
+}
+
+.u54 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:191px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u53 {
+    position:absolute;
+    left:0px;
+    top:60px;
+    width:195px;
+    height:30px
+}
+
+.u55_original {
+    background-image: url('../视频会议中_files/u51_original.png');
+}
+
+.u55_container {
+    position:absolute;
+    left:0px;
+    top:90px;
+    width:195px;
+    height:30px;
+}
+
+#u55_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:201px;
+    height:36px;
+}
+
+.u56 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:191px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u55 {
+    position:absolute;
+    left:0px;
+    top:90px;
+    width:195px;
+    height:30px
+}
+
+.u57_original {
+    background-image: url('../视频会议中_files/u57_original.png');
+}
+
+.u57_container {
+    position:absolute;
+    left:2px;
+    top:32px;
+    width:24px;
+    height:28px;
+}
+
+#u57_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:24px;
+    height:28px;
+}
+
+.u58 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:20px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u57 {
+    position:absolute;
+    left:2px;
+    top:32px;
+    width:24px;
+    height:28px
+}
+
+.u59 {
+    position:absolute;
+    left:35px;
+    top:39px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u60_original {
+    background-image: url('../视频会议中_files/u60_original.png');
+}
+
+.u60_container {
+    position:absolute;
+    left:2px;
+    top:61px;
+    width:25px;
+    height:29px;
+}
+
+#u60_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:25px;
+    height:29px;
+}
+
+.u61 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:21px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u60 {
+    position:absolute;
+    left:2px;
+    top:61px;
+    width:25px;
+    height:29px
+}
+
+.u62 {
+    position:absolute;
+    left:35px;
+    top:67px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u63_original {
+    background-image: url('../视频会议中_files/u63_original.png');
+}
+
+.u63_container {
+    position:absolute;
+    left:2px;
+    top:91px;
+    width:25px;
+    height:28px;
+}
+
+#u63_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:25px;
+    height:28px;
+}
+
+.u64 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:21px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:91px;
+    width:25px;
+    height:28px
+}
+
+.u65 {
+    position:absolute;
+    left:35px;
+    top:98px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u66_original {
+    background-image: url('../视频会议中_files/u66_original.png');
+}
+
+.u66_container {
+    position:absolute;
+    left:165px;
+    top:36px;
+    width:26px;
+    height:21px;
+}
+
+#u66_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:26px;
+    height:21px;
+}
+
+.u67 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:22px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u66 {
+    position:absolute;
+    left:165px;
+    top:36px;
+    width:26px;
+    height:21px
+}
+
+.u68_original {
+    background-image: url('../视频会议中_files/u68_original.png');
+}
+
+.u68_container {
+    position:absolute;
+    left:168px;
+    top:96px;
+    width:23px;
+    height:22px;
+}
+
+#u68_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:23px;
+    height:22px;
+}
+
+.u69 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:19px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u68 {
+    position:absolute;
+    left:168px;
+    top:96px;
+    width:23px;
+    height:22px
+}
+
+.u71_original {
+    background-image: url('../视频会议中_files/u31_original.png');
+}
+
+.u71_container {
+    position:absolute;
+    left:40px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+#u71_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+.u72 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:137px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u71 {
+    position:absolute;
+    left:40px;
+    top:0px;
+    width:141px;
+    height:110px
+}
+
+.u73_original {
+    background-image: url('../视频会议中_files/u31_original.png');
+}
+
+.u73_container {
+    position:absolute;
+    left:40px;
+    top:110px;
+    width:141px;
+    height:110px;
+}
+
+#u73_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:141px;
+    height:110px;
+}
+
+.u74 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:137px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u73 {
+    position:absolute;
+    left:40px;
+    top:110px;
+    width:141px;
+    height:110px
+}
+
+.u75_original {
+    background-image: url('../视频会议中_files/u39_original.png');
+}
+
+.u75_container {
+    position:absolute;
+    left:40px;
+    top:183px;
+    width:50px;
+    height:40px;
+}
+
+#u75_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:40px;
+}
+
+.u76 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u75 {
+    position:absolute;
+    left:40px;
+    top:183px;
+    width:50px;
+    height:40px
+}
+
+.u77_original {
+    background-image: url('../视频会议中_files/u77_original.png');
+}
+
+.u77_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:266px;
+    height:32px;
+}
+
+#u77_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:272px;
+    height:38px;
+}
+
+.u78 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:262px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u77 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:266px;
+    height:32px
+}
+
+.u79_original {
+    background-image: url('../视频会议中_files/u47_original.png');
+}
+
+.u79_container {
+    position:absolute;
+    left:1px;
+    top:0px;
+    width:85px;
+    height:32px;
+}
+
+#u79_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:85px;
+    height:32px;
+}
+
+.u80 {
+    position:absolute;
+    left:2px;
+    top:9px;
+    width:81px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u79 {
+    position:absolute;
+    left:1px;
+    top:0px;
+    width:85px;
+    height:32px
+}
+
+.u81_original {
+    background-image: url('../视频会议中_files/u81_original.png');
+}
+
+.u81_container {
+    position:absolute;
+    left:0px;
+    top:32px;
+    width:266px;
+    height:188px;
+}
+
+#u81_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:272px;
+    height:194px;
+}
+
+.u82 {
+    position:absolute;
+    left:2px;
+    top:86px;
+    width:262px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u81 {
+    position:absolute;
+    left:0px;
+    top:32px;
+    width:266px;
+    height:188px
+}
+
+.u83_original {
+    background-image: url('../视频会议中_files/u83_original.png');
+}
+
+.u83_container {
+    position:absolute;
+    left:0px;
+    top:150px;
+    width:266px;
+    height:30px;
+}
+
+#u83_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:272px;
+    height:36px;
+}
+
+.u84 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:262px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u83 {
+    position:absolute;
+    left:0px;
+    top:150px;
+    width:266px;
+    height:30px
+}
+
+.u86 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:82px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u88 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:82px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u89 {
+    position:absolute;
+    left:1px;
+    top:35px;
+    width:265px;
+    height:115px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'宋体';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u90_original {
+    background-image: url('../视频会议中_files/u90_original.png');
+}
+
+.u90_container {
+    position:absolute;
+    left:125px;
+    top:155px;
+    width:20px;
+    height:20px;
+}
+
+#u90_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:26px;
+    height:26px;
+}
+
+.u91 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:16px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u90 {
+    position:absolute;
+    left:125px;
+    top:155px;
+    width:20px;
+    height:20px
+}
+
+.u92_original {
+    background-image: url('../视频会议中_files/u92_original.png');
+}
+
+.u92_container {
+    position:absolute;
+    left:152px;
+    top:156px;
+    width:60px;
+    height:20px;
+}
+
+#u92_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:66px;
+    height:26px;
+}
+
+.u93 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:56px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u92 {
+    position:absolute;
+    left:152px;
+    top:156px;
+    width:60px;
+    height:20px
+}
+
+.u94_original {
+    background-image: url('../视频会议中_files/u94_original.png');
+}
+
+.u94_container {
+    position:absolute;
+    left:219px;
+    top:156px;
+    width:40px;
+    height:20px;
+}
+
+#u94_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:46px;
+    height:26px;
+}
+
+.u95 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:36px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u94 {
+    position:absolute;
+    left:219px;
+    top:156px;
+    width:40px;
+    height:20px
+}
+
+.u96 {
+    position:absolute;
+    left:1px;
+    top:182px;
+    width:210px;
+    height:35px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'宋体';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u97_original {
+    background-image: url('../视频会议中_files/u97_original.png');
+}
+
+.u97_container {
+    position:absolute;
+    left:214px;
+    top:190px;
+    width:50px;
+    height:25px;
+}
+
+#u97_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:25px;
+}
+
+.u98 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:46px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u97 {
+    position:absolute;
+    left:214px;
+    top:190px;
+    width:50px;
+    height:25px
+}
+

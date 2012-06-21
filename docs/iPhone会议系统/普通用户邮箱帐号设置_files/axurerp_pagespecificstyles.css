@@ -1,0 +1,1110 @@
+body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+div.main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_original {
+    background-image: url('../机子_files/u0_original.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:851px;
+    height:480px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:232px;
+    width:847px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u0 {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px
+}
+
+.u3_container {
+    position:absolute;
+    left:135px;
+    top:50px;
+    width:480px;
+    height:320px;
+}
+
+#u3_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:320px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:152px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3 {
+    position:absolute;
+    left:135px;
+    top:50px;
+    width:480px;
+    height:320px
+}
+
+.u5_original {
+    background-image: url('../邮箱帐号设置_2_files/u5_original.png');
+}
+
+.u5_container {
+    position:absolute;
+    left:287px;
+    top:148px;
+    width:219px;
+    height:42px;
+}
+
+#u5_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:219px;
+    height:42px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:215px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:287px;
+    top:148px;
+    width:219px;
+    height:42px
+}
+
+.u7_original {
+    background-image: url('../邮箱帐号设置_2_files/u7_original.png');
+}
+
+.u7_container {
+    position:absolute;
+    left:145px;
+    top:55px;
+    width:40px;
+    height:40px;
+}
+
+#u7_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:40px;
+    height:40px;
+}
+
+.u8 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:36px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:145px;
+    top:55px;
+    width:40px;
+    height:40px
+}
+
+.u9 {
+    position:absolute;
+    left:194px;
+    top:66px;
+    width:170px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10_original {
+    background-image: url('../邮箱帐号设置_2_files/u10_original.png');
+}
+
+.u10_container {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:110px;
+}
+
+#u10_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:110px;
+}
+
+.u11 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:110px
+}
+
+.u12_original {
+    background-image: url('../邮箱帐号设置_2_files/u12_original.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:150px;
+    top:151px;
+    width:451px;
+    height:39px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:451px;
+    height:39px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:447px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12 {
+    position:absolute;
+    left:150px;
+    top:151px;
+    width:451px;
+    height:39px
+}
+
+.u14_original {
+    background-image: url('../邮箱帐号设置_2_files/u14_original.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:150px;
+    top:153px;
+    width:127px;
+    height:37px;
+}
+
+#u14_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:127px;
+    height:37px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:123px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14 {
+    position:absolute;
+    left:150px;
+    top:153px;
+    width:127px;
+    height:37px
+}
+
+.u16 {
+    position:absolute;
+    left:161px;
+    top:163px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17_original {
+    background-image: url('../邮箱帐号设置_2_files/u17_original.png');
+}
+
+.u17_container {
+    position:absolute;
+    left:150px;
+    top:189px;
+    width:90px;
+    height:30px;
+}
+
+#u17_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:96px;
+    height:36px;
+}
+
+.u18 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:86px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17 {
+    position:absolute;
+    left:150px;
+    top:189px;
+    width:90px;
+    height:30px
+}
+
+.u19_original {
+    background-image: url('../邮箱帐号设置_2_files/u17_original.png');
+}
+
+.u19_container {
+    position:absolute;
+    left:150px;
+    top:219px;
+    width:90px;
+    height:30px;
+}
+
+#u19_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:96px;
+    height:36px;
+}
+
+.u20 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:86px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19 {
+    position:absolute;
+    left:150px;
+    top:219px;
+    width:90px;
+    height:30px
+}
+
+.u21_original {
+    background-image: url('../邮箱帐号设置_2_files/u17_original.png');
+}
+
+.u21_container {
+    position:absolute;
+    left:150px;
+    top:249px;
+    width:90px;
+    height:30px;
+}
+
+#u21_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:96px;
+    height:36px;
+}
+
+.u22 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:86px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u21 {
+    position:absolute;
+    left:150px;
+    top:249px;
+    width:90px;
+    height:30px
+}
+
+.u23_text {
+    position:absolute;
+    left:160px;
+    top:195px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23 {
+    position:absolute;
+    left:160px;
+    top:195px;
+    width:60px;
+    height:16px
+}
+
+.u24_original {
+    background-image: url('../邮箱帐号设置_2_files/u24_original.png');
+}
+
+.u24_container {
+    position:absolute;
+    left:555px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u24_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u25 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24 {
+    position:absolute;
+    left:555px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u26_original {
+    background-image: url('../邮箱帐号设置_2_files/u26_original.png');
+}
+
+.u26_container {
+    position:absolute;
+    left:432px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u26_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u27 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26 {
+    position:absolute;
+    left:432px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u28_original {
+    background-image: url('../邮箱帐号设置_2_files/u28_original.png');
+}
+
+.u28_container {
+    position:absolute;
+    left:494px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u28_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u29 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u28 {
+    position:absolute;
+    left:494px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u30_text {
+    position:absolute;
+    left:160px;
+    top:225px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30 {
+    position:absolute;
+    left:160px;
+    top:225px;
+    width:60px;
+    height:16px
+}
+
+.u31_text {
+    position:absolute;
+    left:160px;
+    top:258px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31 {
+    position:absolute;
+    left:160px;
+    top:258px;
+    width:60px;
+    height:16px
+}
+
+.u32_original {
+    background-image: url('../邮箱帐号设置_2_files/u32_original.png');
+}
+
+.u32_container {
+    position:absolute;
+    left:290px;
+    top:211px;
+    width:200px;
+    height:110px;
+}
+
+#u32_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:200px;
+    height:110px;
+}
+
+.u33 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:196px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u32 {
+    position:absolute;
+    left:290px;
+    top:211px;
+    width:200px;
+    height:110px
+}
+
+.u34_original {
+    background-image: url('../邮箱帐号设置_2_files/u34_original.png');
+}
+
+.u34_container {
+    position:absolute;
+    left:270px;
+    top:200px;
+    width:320px;
+    height:150px;
+}
+
+#u34_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:326px;
+    height:156px;
+}
+
+.u35 {
+    position:absolute;
+    left:2px;
+    top:67px;
+    width:316px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34 {
+    position:absolute;
+    left:270px;
+    top:200px;
+    width:320px;
+    height:150px
+}
+
+.u36_original {
+    background-image: url('../邮箱帐号设置_2_files/u32_original.png');
+}
+
+.u36_container {
+    position:absolute;
+    left:290px;
+    top:211px;
+    width:200px;
+    height:110px;
+}
+
+#u36_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:200px;
+    height:110px;
+}
+
+.u37 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:196px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u36 {
+    position:absolute;
+    left:290px;
+    top:211px;
+    width:200px;
+    height:110px
+}
+
+.u38 {
+    position:absolute;
+    left:297px;
+    top:194px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39 {
+    position:absolute;
+    left:278px;
+    top:229px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40 {
+    position:absolute;
+    left:308px;
+    top:266px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u41 {
+    position:absolute;
+    left:350px;
+    top:225px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'宋体';
+    font-size: 13px;
+    color:#666666;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u42 {
+    position:absolute;
+    left:350px;
+    top:262px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'宋体';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u43_original {
+    background-image: url('../邮箱帐号设置_2_files/u43_original.png');
+}
+
+.u43_container {
+    position:absolute;
+    left:370px;
+    top:310px;
+    width:110px;
+    height:35px;
+}
+
+#u43_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u44 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43 {
+    position:absolute;
+    left:370px;
+    top:310px;
+    width:110px;
+    height:35px
+}
+
+.u45 {
+    position:absolute;
+    left:350px;
+    top:195px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46_original {
+    background-image: url('../邮箱帐号设置_2_files/u46_original.png');
+}
+
+.u46_container {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:43px;
+}
+
+#u46_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:43px;
+}
+
+.u47 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46 {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:43px
+}
+
+.u48_original {
+    background-image: url('../邮箱帐号设置_2_files/u48_original.png');
+}
+
+.u48_container {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:120px;
+    height:43px;
+}
+
+#u48_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:43px;
+}
+
+.u49 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48 {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:120px;
+    height:43px
+}
+
+.u50_original {
+    background-image: url('../邮箱帐号设置_2_files/u50_original.png');
+}
+
+.u50_container {
+    position:absolute;
+    left:255px;
+    top:100px;
+    width:120px;
+    height:43px;
+}
+
+#u50_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:43px;
+}
+
+.u51 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50 {
+    position:absolute;
+    left:255px;
+    top:100px;
+    width:120px;
+    height:43px
+}
+
+.u52_original {
+    background-image: url('../邮箱帐号设置_2_files/u17_original.png');
+}
+
+.u52_container {
+    position:absolute;
+    left:150px;
+    top:279px;
+    width:90px;
+    height:30px;
+}
+
+#u52_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:96px;
+    height:36px;
+}
+
+.u53 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:86px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52 {
+    position:absolute;
+    left:150px;
+    top:279px;
+    width:90px;
+    height:30px
+}
+
+.u54_text {
+    position:absolute;
+    left:152px;
+    top:286px;
+    width:90px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54 {
+    position:absolute;
+    left:152px;
+    top:286px;
+    width:90px;
+    height:16px
+}
+

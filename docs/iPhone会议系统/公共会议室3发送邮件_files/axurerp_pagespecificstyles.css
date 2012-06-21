@@ -1,0 +1,826 @@
+body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+div.main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_original {
+    background-image: url('../机子_files/u0_original.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:851px;
+    height:480px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:232px;
+    width:847px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u0 {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px
+}
+
+.u3_container {
+    position:absolute;
+    left:135px;
+    top:50px;
+    width:480px;
+    height:320px;
+}
+
+#u3_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:320px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:152px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3 {
+    position:absolute;
+    left:135px;
+    top:50px;
+    width:480px;
+    height:320px
+}
+
+.u5_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u5_original.png');
+}
+
+.u5_container {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:110px;
+}
+
+#u5_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:110px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:110px
+}
+
+.u7_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u7_original.png');
+}
+
+.u7_container {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:43px;
+}
+
+#u7_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:43px;
+}
+
+.u8 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:480px;
+    height:43px
+}
+
+.u9_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u9_original.png');
+}
+
+.u9_container {
+    position:absolute;
+    left:145px;
+    top:55px;
+    width:40px;
+    height:40px;
+}
+
+#u9_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:40px;
+    height:40px;
+}
+
+.u10 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:36px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9 {
+    position:absolute;
+    left:145px;
+    top:55px;
+    width:40px;
+    height:40px
+}
+
+.u11 {
+    position:absolute;
+    left:194px;
+    top:66px;
+    width:170px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u12_original.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:281px;
+    top:221px;
+    width:200px;
+    height:110px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:200px;
+    height:110px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:196px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12 {
+    position:absolute;
+    left:281px;
+    top:221px;
+    width:200px;
+    height:110px
+}
+
+.u14_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u14_original.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:120px;
+    height:43px;
+}
+
+#u14_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:43px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14 {
+    position:absolute;
+    left:135px;
+    top:100px;
+    width:120px;
+    height:43px
+}
+
+.u16_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u16_original.png');
+}
+
+.u16_container {
+    position:absolute;
+    left:255px;
+    top:100px;
+    width:120px;
+    height:43px;
+}
+
+#u16_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:43px;
+}
+
+.u17 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16 {
+    position:absolute;
+    left:255px;
+    top:100px;
+    width:120px;
+    height:43px
+}
+
+.u18_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u18_original.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:555px;
+    top:74px;
+    width:56px;
+    height:22px;
+}
+
+#u18_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u18 {
+    position:absolute;
+    left:555px;
+    top:74px;
+    width:56px;
+    height:22px
+}
+
+.u20_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u20_original.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:432px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u20_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20 {
+    position:absolute;
+    left:432px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u22_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u22_original.png');
+}
+
+.u22_container {
+    position:absolute;
+    left:494px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u22_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u23 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22 {
+    position:absolute;
+    left:494px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u24 {
+    position:absolute;
+    left:523px;
+    top:56px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u25_original.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:136px;
+    top:101px;
+    width:480px;
+    height:42px;
+}
+
+#u25_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:42px;
+}
+
+.u26 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25 {
+    position:absolute;
+    left:136px;
+    top:101px;
+    width:480px;
+    height:42px
+}
+
+.u27_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u27_original.png');
+}
+
+.u27_container {
+    position:absolute;
+    left:142px;
+    top:103px;
+    width:136px;
+    height:40px;
+}
+
+#u27_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:136px;
+    height:40px;
+}
+
+.u28 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:132px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27 {
+    position:absolute;
+    left:142px;
+    top:103px;
+    width:136px;
+    height:40px
+}
+
+.u29 {
+    position:absolute;
+    left:142px;
+    top:115px;
+    width:272px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u30_original.png');
+}
+
+.u30_container {
+    position:absolute;
+    left:261px;
+    top:331px;
+    width:110px;
+    height:35px;
+}
+
+#u30_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u31 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30 {
+    position:absolute;
+    left:261px;
+    top:331px;
+    width:110px;
+    height:35px
+}
+
+.u32 {
+    position:absolute;
+    left:165px;
+    top:160px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33 {
+    position:absolute;
+    left:235px;
+    top:155px;
+    width:340px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'宋体';
+    font-size: 13px;
+    color:#999999;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u34 {
+    position:absolute;
+    left:181px;
+    top:193px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35 {
+    position:absolute;
+    left:235px;
+    top:190px;
+    width:340px;
+    height:130px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'宋体';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u36 {
+    position:absolute;
+    left:257px;
+    top:194px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37 {
+    position:absolute;
+    left:257px;
+    top:284px;
+    width:400px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38 {
+    position:absolute;
+    left:257px;
+    top:238px;
+    width:290px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39_original {
+    background-image: url('../公共会议室3发送邮件_1_files/u30_original.png');
+}
+
+.u39_container {
+    position:absolute;
+    left:411px;
+    top:331px;
+    width:110px;
+    height:35px;
+}
+
+#u39_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u40 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39 {
+    position:absolute;
+    left:411px;
+    top:331px;
+    width:110px;
+    height:35px
+}
+
+.u41 {
+    position:absolute;
+    left:257px;
+    top:260px;
+    width:370px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42 {
+    position:absolute;
+    left:257px;
+    top:216px;
+    width:370px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

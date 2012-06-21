@@ -1,0 +1,1644 @@
+body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+div.main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_original {
+    background-image: url('../机子_files/u0_original.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:851px;
+    height:480px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:232px;
+    width:847px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u0 {
+    position:absolute;
+    left:-50px;
+    top:-20px;
+    width:851px;
+    height:480px
+}
+
+.u3_original {
+    background-image: url('../企业会议预约成功_1_files/u3_original.png');
+}
+
+.u3_container {
+    position:absolute;
+    left:960px;
+    top:320px;
+    width:74px;
+    height:21px;
+}
+
+#u3_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:74px;
+    height:21px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3 {
+    position:absolute;
+    left:960px;
+    top:320px;
+    width:74px;
+    height:21px
+}
+
+.u5_container {
+    position:absolute;
+    left:136px;
+    top:50px;
+    width:480px;
+    height:320px;
+}
+
+#u5_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:320px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:152px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5 {
+    position:absolute;
+    left:136px;
+    top:50px;
+    width:480px;
+    height:320px
+}
+
+.u7_original {
+    background-image: url('../企业会议预约成功_1_files/u7_original.png');
+}
+
+.u7_container {
+    position:absolute;
+    left:288px;
+    top:148px;
+    width:219px;
+    height:42px;
+}
+
+#u7_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:219px;
+    height:42px;
+}
+
+.u8 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:215px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:288px;
+    top:148px;
+    width:219px;
+    height:42px
+}
+
+.u9_original {
+    background-image: url('../企业会议预约成功_1_files/u9_original.png');
+}
+
+.u9_container {
+    position:absolute;
+    left:146px;
+    top:55px;
+    width:40px;
+    height:40px;
+}
+
+#u9_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:40px;
+    height:40px;
+}
+
+.u10 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:36px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9 {
+    position:absolute;
+    left:146px;
+    top:55px;
+    width:40px;
+    height:40px
+}
+
+.u11 {
+    position:absolute;
+    left:195px;
+    top:66px;
+    width:170px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_original {
+    background-image: url('../企业会议预约成功_1_files/u12_original.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:282px;
+    top:195px;
+    width:200px;
+    height:110px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:200px;
+    height:110px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:196px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12 {
+    position:absolute;
+    left:282px;
+    top:195px;
+    width:200px;
+    height:110px
+}
+
+.u14_original {
+    background-image: url('../企业会议预约成功_1_files/u14_original.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:136px;
+    top:100px;
+    width:480px;
+    height:110px;
+}
+
+#u14_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:110px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14 {
+    position:absolute;
+    left:136px;
+    top:100px;
+    width:480px;
+    height:110px
+}
+
+.u16_original {
+    background-image: url('../企业会议预约成功_1_files/u16_original.png');
+}
+
+.u16_container {
+    position:absolute;
+    left:256px;
+    top:100px;
+    width:120px;
+    height:43px;
+}
+
+#u16_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:43px;
+}
+
+.u17 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16 {
+    position:absolute;
+    left:256px;
+    top:100px;
+    width:120px;
+    height:43px
+}
+
+.u18_original {
+    background-image: url('../企业会议预约成功_1_files/u18_original.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:376px;
+    top:100px;
+    width:120px;
+    height:44px;
+}
+
+#u18_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:44px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u18 {
+    position:absolute;
+    left:376px;
+    top:100px;
+    width:120px;
+    height:44px
+}
+
+.u20_original {
+    background-image: url('../企业会议预约成功_1_files/u20_original.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:496px;
+    top:100px;
+    width:120px;
+    height:43px;
+}
+
+#u20_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:43px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20 {
+    position:absolute;
+    left:496px;
+    top:100px;
+    width:120px;
+    height:43px
+}
+
+.u22 {
+    position:absolute;
+    left:162px;
+    top:163px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23_original {
+    background-image: url('../企业会议预约成功_1_files/u23_original.png');
+}
+
+.u23_container {
+    position:absolute;
+    left:556px;
+    top:74px;
+    width:56px;
+    height:22px;
+}
+
+#u23_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u24 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23 {
+    position:absolute;
+    left:556px;
+    top:74px;
+    width:56px;
+    height:22px
+}
+
+.u25_original {
+    background-image: url('../企业会议预约成功_1_files/u25_original.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:135px;
+    top:146px;
+    width:480px;
+    height:34px;
+}
+
+#u25_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:34px;
+}
+
+.u26 {
+    position:absolute;
+    left:2px;
+    top:9px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25 {
+    position:absolute;
+    left:135px;
+    top:146px;
+    width:480px;
+    height:34px
+}
+
+.u27_original {
+    background-image: url('../企业会议预约成功_1_files/u27_original.png');
+}
+
+.u27_container {
+    position:absolute;
+    left:136px;
+    top:100px;
+    width:120px;
+    height:44px;
+}
+
+#u27_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:120px;
+    height:44px;
+}
+
+.u28 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:116px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27 {
+    position:absolute;
+    left:136px;
+    top:100px;
+    width:120px;
+    height:44px
+}
+
+.u29_original {
+    background-image: url('../企业会议预约成功_1_files/u29_original.png');
+}
+
+.u29_container {
+    position:absolute;
+    left:174px;
+    top:187px;
+    width:400px;
+    height:53px;
+}
+
+#u29_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:406px;
+    height:59px;
+}
+
+.u30 {
+    position:absolute;
+    left:2px;
+    top:18px;
+    width:396px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29 {
+    position:absolute;
+    left:174px;
+    top:187px;
+    width:400px;
+    height:53px
+}
+
+.u31_original {
+    background-image: url('../企业会议预约成功_1_files/u31_original.png');
+}
+
+.u31_container {
+    position:absolute;
+    left:180px;
+    top:194px;
+    width:33px;
+    height:35px;
+}
+
+#u31_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:33px;
+    height:35px;
+}
+
+.u32 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:29px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31 {
+    position:absolute;
+    left:180px;
+    top:194px;
+    width:33px;
+    height:35px
+}
+
+.u33 {
+    position:absolute;
+    left:217px;
+    top:191px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34 {
+    position:absolute;
+    left:217px;
+    top:217px;
+    width:370px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35_original {
+    background-image: url('../企业会议预约成功_1_files/u35_original.png');
+}
+
+.u35_container {
+    position:absolute;
+    left:149px;
+    top:248px;
+    width:451px;
+    height:39px;
+}
+
+#u35_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:451px;
+    height:39px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:447px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35 {
+    position:absolute;
+    left:149px;
+    top:248px;
+    width:451px;
+    height:39px
+}
+
+.u37_original {
+    background-image: url('../企业会议预约成功_1_files/u37_original.png');
+}
+
+.u37_container {
+    position:absolute;
+    left:150px;
+    top:250px;
+    width:127px;
+    height:37px;
+}
+
+#u37_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:127px;
+    height:37px;
+}
+
+.u38 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:123px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37 {
+    position:absolute;
+    left:150px;
+    top:250px;
+    width:127px;
+    height:37px
+}
+
+.u39 {
+    position:absolute;
+    left:161px;
+    top:259px;
+    width:255px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40_original {
+    background-image: url('../企业会议预约成功_1_files/u40_original.png');
+}
+
+.u40_container {
+    position:absolute;
+    left:310px;
+    top:150px;
+    width:136px;
+    height:20px;
+}
+
+#u40_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:136px;
+    height:20px;
+}
+
+.u41 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:132px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40 {
+    position:absolute;
+    left:310px;
+    top:150px;
+    width:136px;
+    height:20px
+}
+
+.u42 {
+    position:absolute;
+    left:351px;
+    top:156px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43_original {
+    background-image: url('../企业会议预约成功_1_files/u43_original.png');
+}
+
+.u43_container {
+    position:absolute;
+    left:319px;
+    top:146px;
+    width:30px;
+    height:30px;
+}
+
+#u43_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:30px;
+    height:30px;
+}
+
+.u44 {
+    position:absolute;
+    left:2px;
+    top:7px;
+    width:26px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43 {
+    position:absolute;
+    left:319px;
+    top:146px;
+    width:30px;
+    height:30px
+}
+
+.u45_original {
+    background-image: url('../企业会议预约成功_1_files/u45_original.png');
+}
+
+.u45_container {
+    position:absolute;
+    left:150px;
+    top:286px;
+    width:450px;
+    height:80px;
+}
+
+#u45_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:456px;
+    height:86px;
+}
+
+.u46 {
+    position:absolute;
+    left:2px;
+    top:32px;
+    width:446px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u45 {
+    position:absolute;
+    left:150px;
+    top:286px;
+    width:450px;
+    height:80px
+}
+
+.u47_original {
+    background-image: url('../企业会议预约成功_1_files/u47_original.png');
+}
+
+.u47_container {
+    position:absolute;
+    left:156px;
+    top:302px;
+    width:110px;
+    height:35px;
+}
+
+#u47_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u48 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u47 {
+    position:absolute;
+    left:156px;
+    top:302px;
+    width:110px;
+    height:35px
+}
+
+.u49_original {
+    background-image: url('../企业会议预约成功_1_files/u7_original.png');
+}
+
+.u49_container {
+    position:absolute;
+    left:902px;
+    top:158px;
+    width:219px;
+    height:42px;
+}
+
+#u49_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:219px;
+    height:42px;
+}
+
+.u50 {
+    position:absolute;
+    left:2px;
+    top:13px;
+    width:215px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u49 {
+    position:absolute;
+    left:902px;
+    top:158px;
+    width:219px;
+    height:42px
+}
+
+.u51 {
+    position:absolute;
+    left:809px;
+    top:76px;
+    width:170px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52_original {
+    background-image: url('../企业会议预约成功_1_files/u12_original.png');
+}
+
+.u52_container {
+    position:absolute;
+    left:896px;
+    top:205px;
+    width:200px;
+    height:110px;
+}
+
+#u52_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:200px;
+    height:110px;
+}
+
+.u53 {
+    position:absolute;
+    left:2px;
+    top:47px;
+    width:196px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52 {
+    position:absolute;
+    left:896px;
+    top:205px;
+    width:200px;
+    height:110px
+}
+
+.u54_original {
+    background-image: url('../企业会议预约成功_1_files/u54_original.png');
+}
+
+.u54_container {
+    position:absolute;
+    left:750px;
+    top:140px;
+    width:480px;
+    height:80px;
+}
+
+#u54_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:80px;
+}
+
+.u55 {
+    position:absolute;
+    left:2px;
+    top:32px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54 {
+    position:absolute;
+    left:750px;
+    top:140px;
+    width:480px;
+    height:80px
+}
+
+.u56 {
+    position:absolute;
+    left:776px;
+    top:173px;
+    width:150px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u57_original {
+    background-image: url('../企业会议预约成功_1_files/u57_original.png');
+}
+
+.u57_container {
+    position:absolute;
+    left:767px;
+    top:180px;
+    width:450px;
+    height:130px;
+}
+
+#u57_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:456px;
+    height:136px;
+}
+
+.u58 {
+    position:absolute;
+    left:2px;
+    top:57px;
+    width:446px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u57 {
+    position:absolute;
+    left:767px;
+    top:180px;
+    width:450px;
+    height:130px
+}
+
+.u59_original {
+    background-image: url('../企业会议预约成功_1_files/u47_original.png');
+}
+
+.u59_container {
+    position:absolute;
+    left:775px;
+    top:197px;
+    width:110px;
+    height:35px;
+}
+
+#u59_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u60 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u59 {
+    position:absolute;
+    left:775px;
+    top:197px;
+    width:110px;
+    height:35px
+}
+
+.u61 {
+    position:absolute;
+    left:240px;
+    top:410px;
+    width:270px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62 {
+    position:absolute;
+    left:280px;
+    top:304px;
+    width:305px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u63 {
+    position:absolute;
+    left:900px;
+    top:201px;
+    width:310px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64 {
+    position:absolute;
+    left:899px;
+    top:249px;
+    width:300px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u65_original {
+    background-image: url('../企业会议预约成功_1_files/u65_original.png');
+}
+
+.u65_container {
+    position:absolute;
+    left:432px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u65_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u66 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u65 {
+    position:absolute;
+    left:432px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u67_original {
+    background-image: url('../企业会议预约成功_1_files/u67_original.png');
+}
+
+.u67_container {
+    position:absolute;
+    left:494px;
+    top:73px;
+    width:56px;
+    height:22px;
+}
+
+#u67_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:56px;
+    height:22px;
+}
+
+.u68 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:52px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u67 {
+    position:absolute;
+    left:494px;
+    top:73px;
+    width:56px;
+    height:22px
+}
+
+.u69 {
+    position:absolute;
+    left:378px;
+    top:475px;
+    width:210px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u70 {
+    position:absolute;
+    left:228px;
+    top:474px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u71 {
+    position:absolute;
+    left:378px;
+    top:447px;
+    width:210px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u72 {
+    position:absolute;
+    left:228px;
+    top:446px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u73 {
+    position:absolute;
+    left:230px;
+    top:505px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u74 {
+    position:absolute;
+    left:230px;
+    top:535px;
+    width:150px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u75 {
+    position:absolute;
+    left:380px;
+    top:510px;
+    width:198px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u76 {
+    position:absolute;
+    left:523px;
+    top:56px;
+    width:150px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u77_original {
+    background-image: url('../企业会议预约成功_1_files/u77_original.png');
+}
+
+.u77_container {
+    position:absolute;
+    left:135px;
+    top:340px;
+    width:480px;
+    height:29px;
+}
+
+#u77_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:29px;
+}
+
+.u78 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u77 {
+    position:absolute;
+    left:135px;
+    top:340px;
+    width:480px;
+    height:29px
+}
+
+.u79_original {
+    background-image: url('../企业会议预约成功_1_files/u79_original.png');
+}
+
+.u79_container {
+    position:absolute;
+    left:749px;
+    top:139px;
+    width:480px;
+    height:45px;
+}
+
+#u79_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:480px;
+    height:45px;
+}
+
+.u80 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:476px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u79 {
+    position:absolute;
+    left:749px;
+    top:139px;
+    width:480px;
+    height:45px
+}
+
+.u82_original {
+    background-image: url('../企业会议预约成功_1_files/u47_original.png');
+}
+
+.u82_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+#u82_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u83 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u82 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px
+}
+
+.u84_original {
+    background-image: url('../企业会议预约成功_1_files/u47_original.png');
+}
+
+.u84_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+#u84_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px;
+}
+
+.u85 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:106px;
+    height:18px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u84 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:35px
+}
+
