@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '192.168.1.39';
 $db['default']['username'] = 'guester';
 $db['default']['password'] = 'hb666666';
 $db['default']['database'] = 'cecallmeet';
